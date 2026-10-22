@@ -1,0 +1,15 @@
+{
+  "versao": "v0",
+  "nota": "Pares ortográficos para observar fragmentação. A grafia sem diacrítico não é recomendação. Não há pares de sinônimos: trocar o termo muda o enunciado.",
+  "pares": [
+    {"id": "acao", "com_diacritico": "ação", "sem_diacritico": "acao"},
+    {"id": "informacao", "com_diacritico": "informação", "sem_diacritico": "informacao"},
+    {"id": "configuracao", "com_diacritico": "configuração", "sem_diacritico": "configuracao"},
+    {"id": "implementacao", "com_diacritico": "implementação", "sem_diacritico": "implementacao"},
+    {"id": "requisicao", "com_diacritico": "requisição", "sem_diacritico": "requisicao"},
+    {"id": "nao", "com_diacritico": "não", "sem_diacritico": "nao"},
+    {"id": "voce", "com_diacritico": "você", "sem_diacritico": "voce"},
+    {"id": "usuario", "com_diacritico": "usuário", "sem_diacritico": "usuario"}
+  ],
+  "formas": ["resuma", "escreva", "classifique", "extraia", "poderia", "por favor"]
+}

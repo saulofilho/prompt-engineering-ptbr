@@ -1,0 +1,210 @@
+{
+  "versao": "v0",
+  "descricao": "Doze tarefas pareadas. pt_coloquial e pt_otimizado compartilham marcadores de critério. pt_vago omite critérios de propósito. pt_paralelo traduz a instrução en. O braço sem diacrítico é gerado pelo script, não armazenado.",
+  "itens": [
+    {
+      "id": "resumo-chamados",
+      "tarefa": "resumo",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["5 bullets", "20 words", "Brazilian Portuguese"],
+      "marcadores_pt": ["5 tópicos", "20 palavras", "português brasileiro"],
+      "fonte_en": "The support team logged 128 tickets this week. Forty percent concern late deliveries, 25% duplicate charges, and 15% access failures. Mean time to first response was 6 hours, above the 2-hour target.",
+      "fonte_pt": "A equipe de suporte registrou 128 chamados na semana. Quarenta por cento referem-se a atraso de entrega, 25% a cobrança em duplicidade e 15% a falha de acesso. O tempo médio de primeira resposta foi de 6 horas, acima da meta de 2 horas.",
+      "instrucao": {
+        "en": "Summarize the text in 5 bullets. Each bullet is one sentence of at most 20 words. Write the answer in Brazilian Portuguese.",
+        "pt_paralelo": "Resuma o texto em 5 tópicos. Cada tópico é uma frase de no máximo 20 palavras. Escreva a resposta em português brasileiro.",
+        "pt_coloquial": "Oi, tudo bem? Será que você poderia, por favor, me ajudar com uma coisa? Eu queria que você resumisse esse texto em 5 tópicos. Cada tópico precisa ser uma frase de no máximo 20 palavras. Escreve a resposta em português brasileiro, tá bom? Desde já agradeço!",
+        "pt_vago": "Resume esse texto aí pra mim.",
+        "pt_otimizado": "Resuma o texto em 5 tópicos.\nRegras:\n- uma frase por tópico\n- no máximo 20 palavras\n- resposta em português brasileiro"
+      }
+    },
+    {
+      "id": "resumo-ata",
+      "tarefa": "resumo",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["4 sentences", "30 words", "Brazilian Portuguese"],
+      "marcadores_pt": ["4 frases", "30 palavras", "português brasileiro"],
+      "fonte_en": "At the 3 March meeting, the team decided to move the April launch to 20 May. The reason was a recurring-payment failure that affected 312 customers. Product will publish a notice by Friday.",
+      "fonte_pt": "Na reunião de 3 de março, o time decidiu adiar o lançamento de abril para 20 de maio. O motivo foi a falha no pagamento recorrente, que afetou 312 clientes. Ficou definido que o time de produto publicará um aviso até sexta-feira.",
+      "instrucao": {
+        "en": "Summarize the text in 4 sentences. Each sentence has at most 30 words. Write the answer in Brazilian Portuguese.",
+        "pt_paralelo": "Resuma o texto em 4 frases. Cada frase tem no máximo 30 palavras. Escreva a resposta em português brasileiro.",
+        "pt_coloquial": "Gente, desculpa incomodar, mas será que dava para você resumir esse texto em 4 frases? Eu preciso que cada frase tenha no máximo 30 palavras. E a resposta tem que ser em português brasileiro, por favor, se não for pedir demais. Valeu mesmo!",
+        "pt_vago": "Dá uma resumida nisso.",
+        "pt_otimizado": "Resuma o texto em 4 frases.\nRegras:\n- no máximo 30 palavras por frase\n- resposta em português brasileiro"
+      }
+    },
+    {
+      "id": "extrair-chamado",
+      "tarefa": "extracao",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["cliente", "pedido", "problema", "prazo", "JSON"],
+      "marcadores_pt": ["cliente", "pedido", "problema", "prazo", "JSON"],
+      "fonte_en": "Good morning, this is Marina Costa, order 45821. The bank slip was due yesterday and the system still shows it as open. I need a reply today, because shipment is tomorrow.",
+      "fonte_pt": "Bom dia, aqui é a Marina Costa, do pedido 45821. O boleto venceu ontem e o sistema ainda mostra em aberto. Preciso de retorno hoje, porque o embarque é amanhã.",
+      "instrucao": {
+        "en": "Extract the fields cliente, pedido, problema and prazo from the text. Reply with one JSON object and no extra text. Write the values in Brazilian Portuguese.",
+        "pt_paralelo": "Extraia os campos cliente, pedido, problema e prazo do texto. Responda com um único objeto JSON, sem texto extra. Escreva os valores em português brasileiro.",
+        "pt_coloquial": "Oi! Você consegue, por favor, extrair desse texto os campos cliente, pedido, problema e prazo? Eu queria a resposta num único objeto JSON, sem texto extra, e com os valores em português brasileiro. Obrigado, você me salva!",
+        "pt_vago": "Extrai os dados importantes disso.",
+        "pt_otimizado": "Extraia os campos cliente, pedido, problema e prazo.\nRegras:\n- um único objeto JSON\n- sem texto extra\n- valores em português brasileiro"
+      }
+    },
+    {
+      "id": "extrair-cobranca",
+      "tarefa": "extracao",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["numero", "credor", "vencimento", "valor", "JSON"],
+      "marcadores_pt": ["numero", "credor", "vencimento", "valor", "JSON"],
+      "fonte_en": "Invoice 90214, from Oficina Leste, is due on 15 April 2026. The amount is R$ 1,840.00 and covers the replacement of two parts. No discount is recorded.",
+      "fonte_pt": "A cobrança 90214, da Oficina Leste, vence em 15 de abril de 2026. O valor é de R$ 1.840,00 e refere-se à troca de duas peças. Não há desconto registrado.",
+      "instrucao": {
+        "en": "Extract the fields numero, credor, vencimento and valor. Reply with one JSON object and no extra text. Copy the values as they appear in the text.",
+        "pt_paralelo": "Extraia os campos numero, credor, vencimento e valor. Responda com um único objeto JSON, sem texto extra. Copie os valores como estão no texto.",
+        "pt_coloquial": "Será que você podia dar uma olhada e extrair os campos numero, credor, vencimento e valor? Queria um único objeto JSON, sem texto extra, e que você copie os valores como estão no texto, por favor. Brigado!",
+        "pt_vago": "Pega os dados dessa cobrança.",
+        "pt_otimizado": "Extraia os campos numero, credor, vencimento e valor.\nRegras:\n- um único objeto JSON\n- sem texto extra\n- copie os valores como estão no texto"
+      }
+    },
+    {
+      "id": "classificar-avaliacoes",
+      "tarefa": "classificacao",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["positivo", "neutro", "negativo", "JSON"],
+      "marcadores_pt": ["positivo", "neutro", "negativo", "JSON"],
+      "fonte_en": "1) It arrived early and well packed. 2) The product is okay, nothing special. 3) It arrived broken and nobody answered the ticket.",
+      "fonte_pt": "1) Chegou antes do prazo e bem embalado. 2) O produto é ok, nada demais. 3) Veio com defeito e ninguém respondeu o chamado.",
+      "instrucao": {
+        "en": "Classify each item as positivo, neutro or negativo. Reply with a JSON array of three objects with the fields id and classe. No extra text.",
+        "pt_paralelo": "Classifique cada item como positivo, neutro ou negativo. Responda com um array JSON de três objetos com os campos id e classe. Sem texto extra.",
+        "pt_coloquial": "Ei, você pode classificar cada item como positivo, neutro ou negativo, por favor? Eu queria um array JSON de três objetos com os campos id e classe, sem texto extra. Valeu!",
+        "pt_vago": "O que você acha desses comentários?",
+        "pt_otimizado": "Classifique cada item como positivo, neutro ou negativo.\nRegras:\n- array JSON com três objetos\n- campos id e classe\n- sem texto extra"
+      }
+    },
+    {
+      "id": "classificar-incidentes",
+      "tarefa": "classificacao",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["P1:", "P2:", "P3:", "JSON"],
+      "marcadores_pt": ["P1:", "P2:", "P3:", "JSON"],
+      "fonte_en": "Payments for all customers in the South region failed at 9:00. A monthly report was 10 minutes late. A product photo appears cropped on the page.",
+      "fonte_pt": "O pagamento de todos os clientes da região Sul falhou às 9h. Um relatório mensal atrasou 10 minutos. A foto de um produto aparece cortada na página.",
+      "instrucao": {
+        "en": "Classify each sentence as P1, P2 or P3. Definitions: P1: service unavailable for many customers. P2: meaningful delay with a workaround. P3: localized defect. Reply with a JSON array of objects with the fields id and prioridade. No extra text.",
+        "pt_paralelo": "Classifique cada frase como P1, P2 ou P3. Definições: P1: serviço indisponível para muitos clientes. P2: atraso relevante com contorno. P3: defeito localizado. Responda com um array JSON de objetos com os campos id e prioridade. Sem texto extra.",
+        "pt_coloquial": "Você consegue classificar cada frase como P1, P2 ou P3, por favor? Usa estas definições: P1: serviço indisponível para muitos clientes. P2: atraso relevante com contorno. P3: defeito localizado. Eu queria um array JSON de objetos com os campos id e prioridade, sem texto extra. Obrigado!",
+        "pt_vago": "Classifica esses problemas.",
+        "pt_otimizado": "Classifique cada frase como P1, P2 ou P3.\nDefinições: P1: serviço indisponível para muitos clientes. P2: atraso relevante com contorno. P3: defeito localizado.\nRegras:\n- array JSON de objetos com os campos id e prioridade\n- sem texto extra"
+      }
+    },
+    {
+      "id": "codigo-media-movel",
+      "tarefa": "codigo",
+      "rotulo_en": "Context:",
+      "rotulo_pt": "Contexto:",
+      "marcadores_en": ["moving_average", "window", "code only"],
+      "marcadores_pt": ["media_movel", "janela", "somente o código"],
+      "fonte_en": "The series is already in values: list[float], in chronological order, with no missing values.",
+      "fonte_pt": "A série já está em values: list[float], em ordem cronológica, sem valores ausentes.",
+      "instrucao": {
+        "en": "Write the Python function moving_average(values: list[float], window: int) -> list[float]. The window is fixed at 3 positions. Return code only. Do not explain.",
+        "pt_paralelo": "Escreva a função Python media_movel(values: list[float], janela: int) -> list[float]. A janela é fixa de 3 posições. Devolva somente o código. Não explique.",
+        "pt_coloquial": "Oi, será que você pode escrever a função Python media_movel(values: list[float], janela: int) -> list[float]? A janela é fixa de 3 posições. Devolve somente o código, por favor, e não explica. Obrigado!",
+        "pt_vago": "Faz uma média móvel aí.",
+        "pt_otimizado": "Escreva a função Python media_movel(values: list[float], janela: int) -> list[float].\nRegras:\n- janela fixa de 3 posições\n- devolva somente o código\n- não explique"
+      }
+    },
+    {
+      "id": "codigo-validar-cpf",
+      "tarefa": "codigo",
+      "rotulo_en": "Context:",
+      "rotulo_pt": "Contexto:",
+      "marcadores_en": ["is_valid_cpf", "assert", "code only"],
+      "marcadores_pt": ["cpf_valido", "assert", "somente o código"],
+      "fonte_en": "The argument arrives as a string and may contain dots and a hyphen. Do not access the network or any file.",
+      "fonte_pt": "O argumento chega como string e pode conter pontos e traço. Não consulte rede nem arquivo.",
+      "instrucao": {
+        "en": "Write the Python function is_valid_cpf(number: str) -> bool that checks CPF check digits. Reject an invalid format. Include two tests with assert. Return code only.",
+        "pt_paralelo": "Escreva a função Python cpf_valido(numero: str) -> bool que confere os dígitos verificadores do CPF. Rejeite formato inválido. Inclua dois testes com assert. Devolva somente o código.",
+        "pt_coloquial": "Você poderia escrever a função Python cpf_valido(numero: str) -> bool que confere os dígitos verificadores do CPF, por favor? Rejeite formato inválido, inclua dois testes com assert e devolva somente o código. Valeu!",
+        "pt_vago": "Valida CPF pra mim.",
+        "pt_otimizado": "Escreva a função Python cpf_valido(numero: str) -> bool que confere os dígitos verificadores do CPF.\nRegras:\n- rejeite formato inválido\n- inclua dois testes com assert\n- devolva somente o código"
+      }
+    },
+    {
+      "id": "escolher-fornecedor",
+      "tarefa": "raciocinio",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["one choice", "4 lines", "Brazilian Portuguese"],
+      "marcadores_pt": ["uma escolha", "4 linhas", "português brasileiro"],
+      "fonte_en": "Supplier A: R$ 80 per unit, delivery in 10 days, 2% defects. Supplier B: R$ 74 per unit, delivery in 18 days, 6% defects. The target is at most 4% defects and delivery within 14 days.",
+      "fonte_pt": "Fornecedor A: R$ 80 por unidade, entrega em 10 dias, 2% de defeito. Fornecedor B: R$ 74 por unidade, entrega em 18 dias, 6% de defeito. A meta é no máximo 4% de defeito e entrega em até 14 dias.",
+      "instrucao": {
+        "en": "Choose a supplier. Rules: one choice, A or B; justify in at most 4 lines; write the answer in Brazilian Portuguese; use only the data in the text.",
+        "pt_paralelo": "Escolha um fornecedor. Regras: uma escolha, A ou B; justifique em no máximo 4 linhas; escreva a resposta em português brasileiro; use apenas os dados do texto.",
+        "pt_coloquial": "Então, eu queria que você escolhesse um fornecedor, por favor, A ou B, uma escolha só. Justifica em no máximo 4 linhas, a resposta em português brasileiro, e usa apenas os dados do texto, tá? Obrigado desde já!",
+        "pt_vago": "Qual fornecedor é melhor?",
+        "pt_otimizado": "Escolha um fornecedor.\nRegras:\n- uma escolha, A ou B\n- justifique em no máximo 4 linhas\n- resposta em português brasileiro\n- use apenas os dados do texto"
+      }
+    },
+    {
+      "id": "verificar-prazo",
+      "tarefa": "raciocinio",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["no prazo", "fora do prazo", "não informado", "One sentence"],
+      "marcadores_pt": ["no prazo", "fora do prazo", "não informado", "uma frase"],
+      "fonte_en": "The order arrived on 2 March. The contract allows delivery within 15 calendar days. Delivery happened on 20 March. There was no agreed pause.",
+      "fonte_pt": "O pedido entrou em 2 de março. O contrato prevê entrega em 15 dias corridos. A entrega ocorreu em 20 de março. Não houve pausa acordada.",
+      "instrucao": {
+        "en": "Using only the text, state whether the delivery was no prazo or fora do prazo. If data is missing, answer exactly: não informado. One sentence. Write the answer in Brazilian Portuguese.",
+        "pt_paralelo": "Com base apenas no texto, diga se a entrega foi no prazo ou fora do prazo. Se faltar dado, responda exatamente: não informado. Uma frase. Resposta em português brasileiro.",
+        "pt_coloquial": "Com base só no texto, você consegue me dizer se a entrega foi no prazo ou fora do prazo? Se faltar dado, responde exatamente: não informado. Queria uma frase só, em português brasileiro, por favor!",
+        "pt_vago": "A entrega atrasou?",
+        "pt_otimizado": "Com base apenas no texto, diga se a entrega foi no prazo ou fora do prazo.\nRegras:\n- se faltar dado, responda exatamente: não informado\n- uma frase\n- resposta em português brasileiro"
+      }
+    },
+    {
+      "id": "qa-abertura",
+      "tarefa": "qa",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["12 October", "não informado", "One sentence"],
+      "marcadores_pt": ["12 de outubro", "não informado", "uma frase"],
+      "fonte_en": "The store is open Tuesday through Saturday, 9:00 to 18:00. It is closed on Sundays. The text does not mention holidays.",
+      "fonte_pt": "A loja abre de terça a sábado, das 9h às 18h. Não há expediente aos domingos. O texto não trata de feriados.",
+      "instrucao": {
+        "en": "Using only the text, answer whether the store opens on 12 October. If the text does not say, answer exactly: não informado. One sentence. Write the answer in Brazilian Portuguese.",
+        "pt_paralelo": "Com base apenas no texto, responda se a loja abre em 12 de outubro. Se o texto não informar, responda exatamente: não informado. Uma frase. Resposta em português brasileiro.",
+        "pt_coloquial": "Oi, com base apenas no texto, será que a loja abre em 12 de outubro? Se o texto não informar, responde exatamente: não informado. Me manda uma frase, em português brasileiro, por favor. Obrigado!",
+        "pt_vago": "A loja abre nesse dia?",
+        "pt_otimizado": "Com base apenas no texto, responda se a loja abre em 12 de outubro.\nRegras:\n- se o texto não informar, responda exatamente: não informado\n- uma frase\n- resposta em português brasileiro"
+      }
+    },
+    {
+      "id": "qa-tarifa",
+      "tarefa": "qa",
+      "rotulo_en": "Text:",
+      "rotulo_pt": "Texto:",
+      "marcadores_en": ["Anual plan", "another account holder", "não informado", "One sentence"],
+      "marcadores_pt": ["plano Anual", "outra titularidade", "não informado", "uma frase"],
+      "fonte_en": "The Mensal plan fee is R$ 25 per transfer. The Anual plan charges R$ 12. Transfers to the same account holder pay no fee on either plan.",
+      "fonte_pt": "A tarifa do plano Mensal é de R$ 25 por transferência. O plano Anual cobra R$ 12. Transferências para a mesma titularidade não pagam tarifa em nenhum dos planos.",
+      "instrucao": {
+        "en": "Using only the text, state the fee for a transfer to another account holder on the Anual plan. If the text does not say, answer exactly: não informado. One sentence. Write the answer in Brazilian Portuguese.",
+        "pt_paralelo": "Com base apenas no texto, informe o valor da transferência para outra titularidade no plano Anual. Se o texto não informar, responda exatamente: não informado. Uma frase. Resposta em português brasileiro.",
+        "pt_coloquial": "Ei, com base apenas no texto, qual é o valor da transferência para outra titularidade no plano Anual? Se o texto não informar, responde exatamente: não informado. Uma frase, em português brasileiro, por gentileza!",
+        "pt_vago": "Quanto custa?",
+        "pt_otimizado": "Com base apenas no texto, informe o valor da transferência para outra titularidade no plano Anual.\nRegras:\n- se o texto não informar, responda exatamente: não informado\n- uma frase\n- resposta em português brasileiro"
+      }
+    }
+  ]
+}
