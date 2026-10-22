@@ -1,0 +1,112 @@
+{
+  "versao": "v0",
+  "comparacao": "pt_paralelo contra en. Mesmos critérios, fontes traduzidas, resposta pedida em português brasileiro nos dois braços.",
+  "nota": "Cada linha é o tokenizador publicado da família. Não é nota de qualidade do bot. Claude, Gemini e Sabiá permanecem na tabela para o buraco ficar visível: sem tokenizador público, este piloto não inventa a razão.",
+  "modelos": [
+    {
+      "id": "gpt-4o",
+      "rotulo": "GPT-4o / GPT-4.1",
+      "familia": "OpenAI",
+      "produto": "ChatGPT e API da família GPT-4o",
+      "backend": "tiktoken",
+      "ref": "o200k_base",
+      "nota": "Vocabulário o200k_base. Um bot pode trocar de vocabulário sem mudar de nome."
+    },
+    {
+      "id": "gpt-4",
+      "rotulo": "GPT-4 / GPT-3.5",
+      "familia": "OpenAI",
+      "produto": "ChatGPT e API com cl100k_base",
+      "backend": "tiktoken",
+      "ref": "cl100k_base",
+      "nota": "Vocabulário cl100k_base, o mesmo medido por Petrov et al. (2023) para ChatGPT e GPT-4 daquela época."
+    },
+    {
+      "id": "gpt-oss",
+      "rotulo": "GPT-OSS",
+      "familia": "OpenAI",
+      "produto": "Modelo aberto com o200k_harmony, se o tiktoken local tiver esse encoding",
+      "backend": "tiktoken",
+      "ref": "o200k_harmony",
+      "nota": "Encoding opcional. Se esta instalação do tiktoken não o tiver, a linha fica como não medida."
+    },
+    {
+      "id": "llama-3",
+      "rotulo": "Llama 3.2",
+      "familia": "Meta",
+      "produto": "Llama 3.2",
+      "backend": "hf",
+      "ref": "unsloth/Llama-3.2-1B-Instruct",
+      "nota": "tokenizer.json do espelho público. Não baixa peso do modelo. Token especial de início desligado."
+    },
+    {
+      "id": "llama-4",
+      "rotulo": "Llama 4",
+      "familia": "Meta",
+      "produto": "Llama 4 Scout",
+      "backend": "hf",
+      "ref": "unsloth/Llama-4-Scout-17B-16E-Instruct",
+      "nota": "tokenizer.json. Vocabulário maior que o do Llama 3; a razão pode mudar mesmo dentro da mesma família."
+    },
+    {
+      "id": "gemma-3",
+      "rotulo": "Gemma 3",
+      "familia": "Google",
+      "produto": "Gemma 3",
+      "backend": "hf",
+      "ref": "unsloth/gemma-3-4b-it",
+      "nota": "Gemma não é Gemini. O tokenizador do bot Gemini não está nesta linha."
+    },
+    {
+      "id": "qwen-3",
+      "rotulo": "Qwen 3",
+      "familia": "Alibaba",
+      "produto": "Qwen 3",
+      "backend": "hf",
+      "ref": "Qwen/Qwen3-8B",
+      "nota": "tokenizer.json público."
+    },
+    {
+      "id": "deepseek-v3",
+      "rotulo": "DeepSeek V3",
+      "familia": "DeepSeek",
+      "produto": "DeepSeek V3",
+      "backend": "hf",
+      "ref": "deepseek-ai/DeepSeek-V3",
+      "nota": "tokenizer.json. Não é o aplicativo DeepSeek Chat se o produto tiver trocado o vocabulário."
+    },
+    {
+      "id": "mistral-nemo",
+      "rotulo": "Mistral Nemo",
+      "familia": "Mistral",
+      "produto": "Mistral Nemo Instruct",
+      "backend": "hf",
+      "ref": "mistralai/Mistral-Nemo-Instruct-2407",
+      "nota": "tokenizer.json."
+    },
+    {
+      "id": "claude",
+      "rotulo": "Claude",
+      "familia": "Anthropic",
+      "produto": "Claude",
+      "backend": "nao-publicado",
+      "nota": "A Anthropic não publica o tokenizador. A contagem válida é o endpoint count_tokens da API, com o modelo exato. Este piloto não aproxima Claude por tiktoken."
+    },
+    {
+      "id": "gemini",
+      "rotulo": "Gemini",
+      "familia": "Google",
+      "produto": "Gemini",
+      "backend": "nao-publicado",
+      "nota": "O bot Gemini não usa, por definição, o tokenizador da Gemma. Sem a API count_tokens do modelo chamado, a razão fica em aberto."
+    },
+    {
+      "id": "sabia",
+      "rotulo": "Sabiá",
+      "familia": "Maritaca",
+      "produto": "Sabiá",
+      "backend": "nao-publicado",
+      "nota": "Modelo com foco em português. Sem tokenizador público fixado neste piloto, não há número. Não se deduz a razão a partir do Llama."
+    }
+  ]
+}

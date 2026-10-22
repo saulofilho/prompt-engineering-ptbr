@@ -36,6 +36,7 @@ prompt-engineering-ptbr/
 ├── HIPOTESES.md
 ├── docs/
 │   ├── metodologia.md
+│   ├── benchmark-ptbr-en.md
 │   ├── abnt-escopo.md
 │   ├── guia-de-escrita-ptbr.md
 │   ├── checklist-de-prompt.md
@@ -45,7 +46,8 @@ prompt-engineering-ptbr/
 │   ├── results/
 │   └── scripts/
 ├── poc/
-│   └── 01_tokenizacao.py
+│   ├── 01_tokenizacao.py
+│   └── 02_benchmark_modelos.py
 └── evaluation/
     ├── rubricas/
     ├── humanos/
@@ -58,7 +60,19 @@ prompt-engineering-ptbr/
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python poc/01_tokenizacao.py
+.venv/bin/python poc/02_benchmark_modelos.py
 ```
+
+Se `python3 -m venv` falhar por falta do pacote `python3-venv`, o `uv` cria o ambiente no lugar:
+
+```bash
+uv venv .venv
+uv pip install -r requirements.txt --python .venv/bin/python
+.venv/bin/python poc/01_tokenizacao.py
+.venv/bin/python poc/02_benchmark_modelos.py
+```
+
+O segundo script baixa só o `tokenizer.json` dos modelos abertos listados no catálogo. Não baixa peso e não chama API de chat.
 
 Só a checagem dos marcadores, sem gravar resultado:
 

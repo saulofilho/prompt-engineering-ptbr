@@ -166,7 +166,7 @@
       "fonte_pt": "O pedido entrou em 2 de março. O contrato prevê entrega em 15 dias corridos. A entrega ocorreu em 20 de março. Não houve pausa acordada.",
       "instrucao": {
         "en": "Using only the text, state whether the delivery was no prazo or fora do prazo. If data is missing, answer exactly: não informado. One sentence. Write the answer in Brazilian Portuguese.",
-        "pt_paralelo": "Com base apenas no texto, diga se a entrega foi no prazo ou fora do prazo. Se faltar dado, responda exatamente: não informado. Uma frase. Resposta em português brasileiro.",
+        "pt_paralelo": "Com base apenas no texto, diga se a entrega foi no prazo ou fora do prazo. Se faltar dado, responda exatamente: não informado. Responda em uma frase. Resposta em português brasileiro.",
         "pt_coloquial": "Com base só no texto, você consegue me dizer se a entrega foi no prazo ou fora do prazo? Se faltar dado, responde exatamente: não informado. Queria uma frase só, em português brasileiro, por favor!",
         "pt_vago": "A entrega atrasou?",
         "pt_otimizado": "Com base apenas no texto, diga se a entrega foi no prazo ou fora do prazo.\nRegras:\n- se faltar dado, responda exatamente: não informado\n- uma frase\n- resposta em português brasileiro"
@@ -183,7 +183,7 @@
       "fonte_pt": "A loja abre de terça a sábado, das 9h às 18h. Não há expediente aos domingos. O texto não trata de feriados.",
       "instrucao": {
         "en": "Using only the text, answer whether the store opens on 12 October. If the text does not say, answer exactly: não informado. One sentence. Write the answer in Brazilian Portuguese.",
-        "pt_paralelo": "Com base apenas no texto, responda se a loja abre em 12 de outubro. Se o texto não informar, responda exatamente: não informado. Uma frase. Resposta em português brasileiro.",
+        "pt_paralelo": "Com base apenas no texto, responda se a loja abre em 12 de outubro. Se o texto não informar, responda exatamente: não informado. Responda em uma frase. Resposta em português brasileiro.",
         "pt_coloquial": "Oi, com base apenas no texto, será que a loja abre em 12 de outubro? Se o texto não informar, responde exatamente: não informado. Me manda uma frase, em português brasileiro, por favor. Obrigado!",
         "pt_vago": "A loja abre nesse dia?",
         "pt_otimizado": "Com base apenas no texto, responda se a loja abre em 12 de outubro.\nRegras:\n- se o texto não informar, responda exatamente: não informado\n- uma frase\n- resposta em português brasileiro"
@@ -200,8 +200,8 @@
       "fonte_pt": "A tarifa do plano Mensal é de R$ 25 por transferência. O plano Anual cobra R$ 12. Transferências para a mesma titularidade não pagam tarifa em nenhum dos planos.",
       "instrucao": {
         "en": "Using only the text, state the fee for a transfer to another account holder on the Anual plan. If the text does not say, answer exactly: não informado. One sentence. Write the answer in Brazilian Portuguese.",
-        "pt_paralelo": "Com base apenas no texto, informe o valor da transferência para outra titularidade no plano Anual. Se o texto não informar, responda exatamente: não informado. Uma frase. Resposta em português brasileiro.",
-        "pt_coloquial": "Ei, com base apenas no texto, qual é o valor da transferência para outra titularidade no plano Anual? Se o texto não informar, responde exatamente: não informado. Uma frase, em português brasileiro, por gentileza!",
+        "pt_paralelo": "Com base apenas no texto, informe o valor da transferência para outra titularidade no plano Anual. Se o texto não informar, responda exatamente: não informado. Responda em uma frase. Resposta em português brasileiro.",
+        "pt_coloquial": "Ei, com base apenas no texto, qual é o valor da transferência para outra titularidade no plano Anual? Se o texto não informar, responde exatamente: não informado. em uma frase, em português brasileiro, por gentileza!",
         "pt_vago": "Quanto custa?",
         "pt_otimizado": "Com base apenas no texto, informe o valor da transferência para outra titularidade no plano Anual.\nRegras:\n- se o texto não informar, responda exatamente: não informado\n- uma frase\n- resposta em português brasileiro"
       }
