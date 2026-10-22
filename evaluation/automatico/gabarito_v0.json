@@ -1,0 +1,72 @@
+{
+  "versao": "v0",
+  "nota": "Gabarito automático escrito antes de qualquer resposta de modelo. Tarefa sem fato verificável não entra como alucinação.",
+  "itens": {
+    "resumo-chamados": {
+      "formato": "lista",
+      "n_itens": 5,
+      "max_palavras_item": 20,
+      "numeros_permitidos": [128, 40, 25, 15, 6, 2, 5, 20]
+    },
+    "resumo-ata": {
+      "formato": "frases",
+      "n_itens": 4,
+      "max_palavras_item": 30,
+      "numeros_permitidos": [3, 4, 20, 312, 30]
+    },
+    "extrair-chamado": {
+      "formato": "json_objeto",
+      "campos": ["cliente", "pedido", "problema", "prazo"],
+      "contem": {"cliente": "Marina Costa", "pedido": "45821"}
+    },
+    "extrair-cobranca": {
+      "formato": "json_objeto",
+      "campos": ["numero", "credor", "vencimento", "valor"],
+      "contem": {"numero": "90214", "credor": "Oficina Leste", "valor": "1840"}
+    },
+    "classificar-avaliacoes": {
+      "formato": "json_lista",
+      "n_itens": 3,
+      "campo_classe": "classe",
+      "classes": ["positivo", "neutro", "negativo"],
+      "classes_esperadas": ["positivo", "neutro", "negativo"]
+    },
+    "classificar-incidentes": {
+      "formato": "json_lista",
+      "n_itens": 3,
+      "campo_classe": "prioridade",
+      "classes": ["P1", "P2", "P3"]
+    },
+    "codigo-media-movel": {
+      "formato": "codigo",
+      "nomes": {"en": "moving_average", "pt": "media_movel"},
+      "proibir_prosa_longa": true
+    },
+    "codigo-validar-cpf": {
+      "formato": "codigo",
+      "nomes": {"en": "is_valid_cpf", "pt": "cpf_valido"},
+      "exige": ["assert"],
+      "proibir_prosa_longa": true
+    },
+    "escolher-fornecedor": {
+      "formato": "prosa",
+      "max_linhas": 4,
+      "escolha": "A",
+      "numeros_permitidos": [80, 10, 2, 74, 18, 6, 4, 14]
+    },
+    "verificar-prazo": {
+      "formato": "frase",
+      "contem": "fora do prazo",
+      "proibe_so_ausencia": true
+    },
+    "qa-abertura": {
+      "formato": "frase",
+      "exato": "não informado"
+    },
+    "qa-tarifa": {
+      "formato": "frase",
+      "contem_numero": 12,
+      "proibe_numero_como_resposta": 25
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "repeticoes": 1,
+  "aviso": "Checagem automática. Sem amostra humana. Sem razão inventada.",
+  "modelos": [
+    {
+      "id": "gpt-4o",
+      "rotulo": "GPT-4o",
+      "status": "nao-medido",
+      "erro": "sem chave de API neste ambiente; a razão não foi inventada"
+    },
+    {
+      "id": "claude",
+      "rotulo": "Claude Haiku 4.5",
+      "status": "nao-medido",
+      "erro": "sem chave de API neste ambiente; a razão não foi inventada"
+    },
+    {
+      "id": "gemini",
+      "rotulo": "Gemini 3.8 Flash",
+      "status": "nao-medido",
+      "erro": "sem chave de API neste ambiente; a razão não foi inventada"
+    },
+    {
+      "id": "sabia",
+      "rotulo": "Sabiá-4",
+      "status": "nao-medido",
+      "erro": "sem chave de API neste ambiente; a razão não foi inventada"
+    }
+  ]
+}

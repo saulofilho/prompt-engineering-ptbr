@@ -1,0 +1,51 @@
+{
+  "consultado_em": "2026-10-22",
+  "nota": "Preço público de tabela, por 1 milhão de tokens, sem cache, sem lote e sem desconto. Não inclui hospedagem de modelo aberto. Modelo sem linha aqui fica sem dólar: o script não copia o preço de outro.",
+  "cambio_brl_por_usd": {
+    "valor": 5.14,
+    "fonte": "https://www.maritaca.ai/en/pricing/",
+    "nota": "Taxa aproximada publicada pela Maritaca para converter a própria tabela. Não é o câmbio oficial do dia."
+  },
+  "modelos": [
+    {
+      "id": "gpt-4o",
+      "rotulo": "GPT-4o",
+      "entrada_usd_por_milhao": 2.5,
+      "saida_usd_por_milhao": 10.0,
+      "fonte": "https://developers.openai.com/api/docs/models/gpt-4o",
+      "vigencia": "tabela consultada em 2026-10-22"
+    },
+    {
+      "id": "gpt-4.1",
+      "rotulo": "GPT-4.1",
+      "entrada_usd_por_milhao": 2.0,
+      "saida_usd_por_milhao": 8.0,
+      "fonte": "https://developers.openai.com/api/docs/pricing",
+      "vigencia": "tabela consultada em 2026-10-22"
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "rotulo": "Claude Haiku 4.5",
+      "entrada_usd_por_milhao": 1.0,
+      "saida_usd_por_milhao": 5.0,
+      "fonte": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "vigencia": "preço base, sem cache, consultado em 2026-10-22"
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "rotulo": "Gemini 3.8 Flash",
+      "entrada_usd_por_milhao": 0.75,
+      "saida_usd_por_milhao": 3.75,
+      "fonte": "https://ai.google.dev/gemini-api/docs/pricing",
+      "vigencia": "faixa paga padrão até 2026-12-31; depois a página cobra o dobro"
+    },
+    {
+      "id": "sabia-4",
+      "rotulo": "Sabiá-4",
+      "entrada_brl_por_milhao": 5.0,
+      "saida_brl_por_milhao": 20.0,
+      "fonte": "https://www.maritaca.ai/en/pricing/",
+      "vigencia": "preço padrão, fora da variante br-sp, consultado em 2026-10-22"
+    }
+  ]
+}

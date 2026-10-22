@@ -34,19 +34,14 @@ Uma família ausente do catálogo não foi “empatada”. Não foi medida. Para
 
 ## O que esta seção não é
 
-Não é prova de que um bot responde melhor em inglês ou em português. Não é preço em dólar. Não é o prêmio de Petrov et al. (2023) reimpresso: aquele número é do FLORES-200 no `cl100k_base`. O deste arquivo é dos doze prompts daqui. Os dois podem discordar sem que um esteja “errado”; o corpus mudou.
+Não é o prêmio de Petrov et al. (2023) reimpresso: aquele número é do FLORES-200 no `cl100k_base`. O deste arquivo é dos doze prompts daqui. Os dois podem discordar sem que um esteja “errado”; o corpus mudou.
 
-Não aprove a variante que só é mais curta porque apagou regra. Isso é o braço `pt_vago`, tratado no outro piloto.
+Não aprove a variante que só é mais curta porque apagou regra. Isso é o braço `pt_vago`.
 
-## Qualidade, ainda por modelo
+O dólar da entrada, só onde há preço de tabela e tokens medidos, está em [`benchmarks/results/custo_usd.md`](../benchmarks/results/custo_usd.md).
 
-A fase seguinte, ainda não executada, repete estes braços na geração e compara a resposta com a rubrica em `evaluation/rubricas/rubrica_v0.md`. O mínimo para falar de bot, e não só de tokenizador:
+## Qualidade e chamada ao modelo
 
-- o mesmo modelo que a tabela de tokens diz medir;
-- temperatura fixa;
-- três repetições;
-- resposta pedida em português brasileiro também no braço inglês;
-- checagem de formato antes de qualquer juiz automático;
-- amostra humana cega, porque juízo de modelo tende a favorecer o inglês.
+O script `poc/04_gerar_e_avaliar.py` chama GPT-4o, Claude Haiku 4.5, Gemini 3.8 Flash e Sabiá-4, aplica a checagem automática, faz no máximo um reprompt quando o formato falha e soma o dólar do fluxo. A razão PT/EN desses bots só é gravada se a API devolver o usage. O relatório desta máquina está em [`benchmarks/results/geracao_qualidade.md`](../benchmarks/results/geracao_qualidade.md) e em [`benchmarks/results/benchmark_api_ptbr_en.md`](../benchmarks/results/benchmark_api_ptbr_en.md). Sem chave, as linhas ficam vazias.
 
-Até esse relatório existir, a única comparação entre português brasileiro e inglês que este repositório publica é a de tokens, por vocabulário, no arquivo gerado.
+A amostra humana da rubrica continua obrigatória antes de tratar a nota automática como qualidade fechada.

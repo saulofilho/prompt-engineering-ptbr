@@ -1,0 +1,87 @@
+{
+  "consultado_em": "2026-10-22",
+  "cambio_brl_por_usd": 5.14,
+  "aviso": "Dólar de entrada a partir de tokens medidos. Sem saída e sem preço emprestado.",
+  "modelos": [
+    {
+      "id": "gpt-4o",
+      "rotulo": "GPT-4o (tokens de GPT-4o / GPT-4.1)",
+      "status": "medido",
+      "preco_id": "gpt-4o",
+      "fonte": "https://developers.openai.com/api/docs/models/gpt-4o",
+      "tokens_en": 896,
+      "tokens_pt": 1011,
+      "usd_entrada_en": 0.00224,
+      "usd_entrada_pt": 0.0025275,
+      "usd_entrada_diferenca": 0.0002875,
+      "saida": null,
+      "nota": "Só a entrada dos doze prompts. A saída não foi gerada neste arquivo."
+    },
+    {
+      "id": "gpt-4",
+      "rotulo": "GPT-4 / GPT-3.5",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "gpt-oss",
+      "rotulo": "GPT-OSS",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "llama-3",
+      "rotulo": "Llama 3.2",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "llama-4",
+      "rotulo": "Llama 4",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "gemma-3",
+      "rotulo": "Gemma 3",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "qwen-3",
+      "rotulo": "Qwen 3",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "deepseek-v3",
+      "rotulo": "DeepSeek V3",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "mistral-nemo",
+      "rotulo": "Mistral Nemo",
+      "status": "sem_dolar",
+      "motivo": "sem preço de tabela verificado para este vocabulário"
+    },
+    {
+      "id": "claude",
+      "rotulo": "Claude",
+      "status": "sem_dolar",
+      "motivo": "sem tokens medidos neste benchmark"
+    },
+    {
+      "id": "gemini",
+      "rotulo": "Gemini",
+      "status": "sem_dolar",
+      "motivo": "sem tokens medidos neste benchmark"
+    },
+    {
+      "id": "sabia",
+      "rotulo": "Sabiá",
+      "status": "sem_dolar",
+      "motivo": "sem tokens medidos neste benchmark"
+    }
+  ]
+}
