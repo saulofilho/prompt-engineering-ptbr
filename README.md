@@ -1,8 +1,20 @@
 # Prompts em português brasileiro
 
-Repositório aberto para estudar como escrever prompts em português e quanto isso custa em tokens. O manifesto está em [`MANIFESTO.md`](MANIFESTO.md). As hipóteses, registradas antes da contagem, estão em [`HIPOTESES.md`](HIPOTESES.md).
+Repositório aberto para estudar como escrever prompts em português e quanto isso custa em tokens, e um plugin de skills para o agente aplicar esse método. O manifesto está em [`MANIFESTO.md`](MANIFESTO.md). As hipóteses, registradas antes da contagem, estão em [`HIPOTESES.md`](HIPOTESES.md). A entrada do plugin está em [`skills/using-prompt-ptbr/SKILL.md`](skills/using-prompt-ptbr/SKILL.md).
 
 A tese pública é esta: prompts em português podem ser claros, acessíveis e adequados ao contexto lusófono. O custo de tokenização em relação ao inglês é real e depende do vocabulário. Ele não se resolve com a sigla ABNT, com a retirada de acentos nem com a obrigação de pensar em inglês. Resolve-se, quando se resolve, com instrução menos ambígua e com medição do fluxo inteiro: entrada, saída e retrabalho.
+
+## Plugin
+
+Skills para o agente escrever e revisar o pedido sem transformar o piloto em regra. O manifesto de instalação está em [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (`prompt-ptbr`, versão 0.1.0). [`AGENTS.md`](AGENTS.md) manda o agente ler a skill de entrada antes de redigir.
+
+No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, porque o Windows não segue o link simbólico do Linux. Quando o plugin estiver no marketplace, o comando é `/add-plugin prompt-ptbr`. Outros harnesses ainda não têm pacote próprio.
+
+- [Usar o plugin](skills/using-prompt-ptbr/SKILL.md). Escolhe a skill certa antes de redigir e lista o que o agente não pode afirmar.
+- [Escrever](skills/writing-precise-ptbr/SKILL.md). Reescreve o pedido em português: imperativo, regras conferíveis, termo estável e frase de ausência.
+- [Conferir](skills/checking-prompt/SKILL.md). Marca o checklist e recusa chamar de otimizada a versão que só ficou curta porque apagou critério.
+- [ABNT no pedido](skills/scoping-abnt/SKILL.md). Aplica citação, termo e numeração onde a norma regula, e recusa a sigla como técnica de token.
+- [Medir](skills/measuring-tokens/SKILL.md). Manda contar no tokenizador do modelo alvo e deixa Claude, Gemini e Sabiá sem número quando não há resposta da API deles.
 
 ## Seções
 
@@ -36,17 +48,15 @@ A tese pública é esta: prompts em português podem ser claros, acessíveis e a
 - [Protocolo de juiz automático](evaluation/llm-as-judge/PROTOCOLO.md). Regras para um modelo julgar resposta. Ainda não executado; não substitui amostra humana.
 - [Avaliação humana](evaluation/humanos/README.md). Onde as notas cegas entram. Ainda não há notas.
 
-### Plugin
+### Dados e execução
 
-Skills para o agente aplicar o método sem transformar o piloto em regra. A entrada é [`skills/using-prompt-ptbr/SKILL.md`](skills/using-prompt-ptbr/SKILL.md).
-
-- [Usar o plugin](skills/using-prompt-ptbr/SKILL.md). Escolhe a skill certa antes de redigir e lista o que o agente não pode afirmar.
-- [Escrever](skills/writing-precise-ptbr/SKILL.md). Reescreve o pedido em português: imperativo, regras conferíveis, termo estável e frase de ausência.
-- [Conferir](skills/checking-prompt/SKILL.md). Marca o checklist e recusa chamar de otimizada a versão que só ficou curta porque apagou critério.
-- [ABNT no pedido](skills/scoping-abnt/SKILL.md). Aplica citação, termo e numeração onde a norma regula, e recusa a sigla como técnica de token.
-- [Medir](skills/measuring-tokens/SKILL.md). Manda contar no tokenizador do modelo alvo e deixa Claude, Gemini e Sabiá sem número quando não há resposta da API deles.
-
-Para usar no Cursor, abra este repositório, ou instale o plugin quando ele estiver no marketplace (`/add-plugin prompt-ptbr`). O manifesto do plugin está em [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json). As skills canônicas ficam em `skills/`. A pasta `.cursor/skills` repete o mesmo texto, para o Cursor carregar ao abrir a pasta no Windows, onde um link simbólico do Linux não é lido.
+- [Pares v0](benchmarks/datasets/pares_v0.json). Doze tarefas pareadas, com os marcadores de critério que os braços otimizado e coloquial precisam conservar.
+- [Léxico v0](benchmarks/datasets/lexico_v0.json). Pares ortográficos para ver fragmentação de token. Não recomenda sinônimo mais curto.
+- [Catálogo de modelos](benchmarks/datasets/modelos_v0.json). Tokenizador de cada família. Claude, Gemini e Sabiá ficam como vocabulário não publicado.
+- [Preços](benchmarks/datasets/precos_v0.json). Tabela datada usada na conversão para dólar. Modelo sem linha fica sem custo.
+- [Prova de conceito](poc/README.md). O que cada script faz: contagem, comparação entre idiomas, dólar e chamada de API.
+- [Resultados](benchmarks/results/README.md). Quais arquivos cada script grava, e a regra de não editar o número à mão.
+- [Scripts seguintes](benchmarks/scripts/README.md). Onde entra fase nova sem copiar a contagem para fora de `poc/`.
 
 ## Mapa
 
@@ -56,6 +66,7 @@ prompt-engineering-ptbr/
 ├── HIPOTESES.md
 ├── AGENTS.md
 ├── .cursor-plugin/plugin.json
+├── .cursor/skills/
 ├── skills/
 │   ├── using-prompt-ptbr/
 │   ├── writing-precise-ptbr/
@@ -120,7 +131,7 @@ O script recusa o dataset se a variante coloquial ou a otimizada perder um crit�
 
 ## Contribuir
 
-Leia [`CONTRIBUTING.md`](CONTRIBUTING.md). Hipótese nova não reescreve `HIPOTESES.md` depois que existe resultado: entra em arquivo de versão seguinte.
+Leia [`CONTRIBUTING.md`](CONTRIBUTING.md). Hipótese nova não reescreve `HIPOTESES.md` depois que existe resultado: entra em arquivo de versão seguinte. O combinado de convivência está em [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
 ## Licença
 
