@@ -1,0 +1,20 @@
+{
+  "name": "prompt-ptbr",
+  "displayName": "Prompt PT-BR",
+  "description": "Skills para escrever prompts precisos em português brasileiro: critério conferível, ABNT no lugar certo e contagem no tokenizador do modelo, sem percentual emprestado.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Saulo Filho",
+    "url": "https://github.com/saulofilho"
+  },
+  "license": "MIT",
+  "keywords": [
+    "prompt",
+    "portugues",
+    "pt-br",
+    "tokens",
+    "abnt",
+    "skills"
+  ],
+  "skills": "./skills"
+}

@@ -24,4 +24,4 @@ SOFTWARE.
 
 Documentação (`MANIFESTO.md`, `HIPOTESES.md` e o diretório `docs/`) é licenciada sob a Creative Commons Atribuição 4.0 Internacional (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
 
-Código, datasets em JSON e o script do piloto seguem a licença MIT acima.
+Código, datasets em JSON, scripts do piloto e as skills em `skills/` e `.cursor/skills/` seguem a licença MIT acima.

@@ -36,12 +36,32 @@ A tese pública é esta: prompts em português podem ser claros, acessíveis e a
 - [Protocolo de juiz automático](evaluation/llm-as-judge/PROTOCOLO.md). Regras para um modelo julgar resposta. Ainda não executado; não substitui amostra humana.
 - [Avaliação humana](evaluation/humanos/README.md). Onde as notas cegas entram. Ainda não há notas.
 
+### Plugin
+
+Skills para o agente aplicar o método sem transformar o piloto em regra. A entrada é [`skills/using-prompt-ptbr/SKILL.md`](skills/using-prompt-ptbr/SKILL.md).
+
+- [Usar o plugin](skills/using-prompt-ptbr/SKILL.md). Escolhe a skill certa antes de redigir e lista o que o agente não pode afirmar.
+- [Escrever](skills/writing-precise-ptbr/SKILL.md). Reescreve o pedido em português: imperativo, regras conferíveis, termo estável e frase de ausência.
+- [Conferir](skills/checking-prompt/SKILL.md). Marca o checklist e recusa chamar de otimizada a versão que só ficou curta porque apagou critério.
+- [ABNT no pedido](skills/scoping-abnt/SKILL.md). Aplica citação, termo e numeração onde a norma regula, e recusa a sigla como técnica de token.
+- [Medir](skills/measuring-tokens/SKILL.md). Manda contar no tokenizador do modelo alvo e deixa Claude, Gemini e Sabiá sem número quando não há resposta da API deles.
+
+Para usar no Cursor, abra este repositório, ou instale o plugin quando ele estiver no marketplace (`/add-plugin prompt-ptbr`). O manifesto do plugin está em [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json). As skills canônicas ficam em `skills/`. A pasta `.cursor/skills` repete o mesmo texto, para o Cursor carregar ao abrir a pasta no Windows, onde um link simbólico do Linux não é lido.
+
 ## Mapa
 
 ```text
 prompt-engineering-ptbr/
 ├── MANIFESTO.md
 ├── HIPOTESES.md
+├── AGENTS.md
+├── .cursor-plugin/plugin.json
+├── skills/
+│   ├── using-prompt-ptbr/
+│   ├── writing-precise-ptbr/
+│   ├── checking-prompt/
+│   ├── scoping-abnt/
+│   └── measuring-tokens/
 ├── docs/
 │   ├── metodologia.md
 │   ├── benchmark-ptbr-en.md
@@ -104,7 +124,7 @@ Leia [`CONTRIBUTING.md`](CONTRIBUTING.md). Hipótese nova não reescreve `HIPOTE
 
 ## Licença
 
-Código sob a licença MIT, em [`LICENSE`](LICENSE). Texto em `docs/`, `MANIFESTO.md` e `HIPOTESES.md` sob CC BY 4.0: pode copiar e adaptar, com crédito e indicação de mudança.
+Código, scripts e skills sob a licença MIT, em [`LICENSE`](LICENSE). Texto em `docs/`, `MANIFESTO.md` e `HIPOTESES.md` sob CC BY 4.0: pode copiar e adaptar, com crédito e indicação de mudança.
 
 ## Como citar
 
