@@ -15,6 +15,8 @@ Chamar de “português ABNT” um prompt curto, sem cortesia e com lista é usa
 
 Um manual de prompt pode ser claro e ainda assim citar mal. Um texto pode cumprir a NBR 6023 e ser um péssimo prompt. São ofícios diferentes.
 
+O uso prático dessas normas num pedido em português, com o que os estudos sustentam e o que fica de fora, está em `docs/escrita-precisa-ptbr.md`.
+
 ## O que a norma empresta, sem virar regra de token
 
 Há um empréstimo útil, e ele é de atitude: definir o termo, separar fato de comentário e deixar o leitor refazer o caminho. No prompt, isso vira critério explícito, fonte delimitada e formato de saída. No repositório, vira hipótese datada, hash e script. A economia de tokens, se existir, será um efeito medido dessa clareza, não uma propriedade da norma.

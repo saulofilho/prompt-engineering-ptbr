@@ -4,26 +4,37 @@ Repositório aberto para estudar como escrever prompts em português e quanto is
 
 A tese pública é esta: prompts em português podem ser claros, acessíveis e adequados ao contexto lusófono. O custo de tokenização em relação ao inglês é real e depende do vocabulário. Ele não se resolve com a sigla ABNT, com a retirada de acentos nem com a obrigação de pensar em inglês. Resolve-se, quando se resolve, com instrução menos ambígua e com medição do fluxo inteiro: entrada, saída e retrabalho.
 
-## Benchmarks
+## Seções
 
-- Tokens por modelo, português brasileiro contra inglês: protocolo em [`docs/benchmark-ptbr-en.md`](docs/benchmark-ptbr-en.md), tabela em [`benchmarks/results/benchmark_modelos_ptbr_en.md`](benchmarks/results/benchmark_modelos_ptbr_en.md).
-- Piloto das hipóteses (estrutura, prêmio e diacrítico): [`benchmarks/results/poc_v0_tokenizacao.md`](benchmarks/results/poc_v0_tokenizacao.md).
-- Dólar da entrada, com preço de tabela datado: [`benchmarks/results/custo_usd.md`](benchmarks/results/custo_usd.md).
-- Geração, nota automática, alucinação verificável, reprompt e dólar do fluxo: [`benchmarks/results/geracao_qualidade.md`](benchmarks/results/geracao_qualidade.md).
-- Razão PT/EN só com a contagem que a API devolver: [`benchmarks/results/benchmark_api_ptbr_en.md`](benchmarks/results/benchmark_api_ptbr_en.md). Claude, Gemini e Sabiá não herdam número de outro tokenizador.
+### Posição e método
 
-## O que esta execução mediu
+- [Manifesto](MANIFESTO.md). Tese do projeto: português preciso é legítimo; a ABNT não é técnica de token; o que o repositório afirma e o que recusa.
+- [Hipóteses](HIPOTESES.md). H1 a H5 pré-registradas, com limiar, escopo e o que uma contagem de tokens não pode decidir.
+- [Metodologia](docs/metodologia.md). Braços pareados, métricas, razão das somas, tokenizadores e ameaças à validade do piloto.
+- [Referências](docs/referencias.md). Fontes em formato de referência, com o que cada uma sustenta e o que não sustenta.
 
-- Conta tokens de doze tarefas pareadas, em inglês, português paralelo, português coloquial, português vago, português otimizado e a mesma versão sem diacríticos.
-- Compara português brasileiro e inglês no tokenizador publicado de várias famílias.
-- Converte a entrada do GPT-4o em dólar. Nos doze prompts, a diferença foi US$ 0,000287 a mais no português, à tabela de US$ 2,50 por milhão de tokens de entrada. Saída ainda não entra nessa conta.
-- Tem script para chamar GPT-4o, Claude Haiku 4.5, Gemini 3.8 Flash e Sabiá-4, pontuar formato e alucinação verificável, fazer um reprompt se o formato falhar e somar o dólar do fluxo.
+### Escrever em português
 
-## O que esta execução não mediu
+- [Escrita precisa](docs/escrita-precisa-ptbr.md). Método para quem precisa ser exato: critério conferível, frase de ausência, diacrítico, termo estável, e o que as normas ABNT emprestam ao pedido.
+- [Guia curto](docs/guia-de-escrita-ptbr.md). Dez práticas de clareza, cada uma com o status da evidência (piloto, hipótese ou ainda não medido).
+- [Checklist](docs/checklist-de-prompt.md). Conferência antes de tratar uma redação como versão otimizada.
+- [Escopo da ABNT](docs/abnt-escopo.md). O que NBR 6023, 6028, 10520 e 14724 fazem neste repositório, e por que a sigla não nomeia um estilo de prompt.
 
-Nesta máquina não havia chave de API. O script de geração rodou e deixou as quatro linhas sem nota e sem razão. Isso é de propósito: Claude, Gemini e Sabiá continuam vazios até a própria API devolver os tokens.
+### Benchmarks
 
-A nota automática também não substitui a amostra humana da rubrica. Com chave, o comando está na seção de rodar o piloto.
+- [Protocolo PT-BR e inglês](docs/benchmark-ptbr-en.md). Como a comparação entre idiomas é desenhada, modelo a modelo, e o que fica de fora.
+- [Tabela por modelo](benchmarks/results/benchmark_modelos_ptbr_en.md). Razão de tokens do português paralelo sobre o inglês, no tokenizador publicado de cada família. Claude, Gemini e Sabiá ficam sem número.
+- [Piloto das hipóteses](benchmarks/results/poc_v0_tokenizacao.md). Contagem dos braços no `o200k_base` e no `cl100k_base`: estrutura, prêmio e diacrítico, com a decisão neste conjunto.
+- [Custo em dólar](benchmarks/results/custo_usd.md). Entrada dos doze prompts convertida pela tabela de 22 out. 2026. Só há dólar onde existem tokens medidos e preço verificado.
+- [Geração e qualidade](benchmarks/results/geracao_qualidade.md). Chamada ao modelo, nota automática, alucinação verificável, reprompt e dólar do fluxo. Nesta execução as linhas estão vazias: não havia chave de API.
+- [Razão medida na API](benchmarks/results/benchmark_api_ptbr_en.md). PT/EN só com o `usage` que o provedor devolve. Sem chamada, a linha não é preenchida com outro tokenizador.
+
+### Avaliação
+
+- [Rubrica](evaluation/rubricas/rubrica_v0.md). Nota de 0 a 10 registrada antes das respostas: formato, critério, fidelidade, ausência e idioma. Reprompt fica fora da nota.
+- [Checagem automática](evaluation/automatico/checagem_v0.py). Aplica o que dá para verificar sem pessoa: JSON, tamanho, frase exata e número que não está na fonte.
+- [Protocolo de juiz automático](evaluation/llm-as-judge/PROTOCOLO.md). Regras para um modelo julgar resposta. Ainda não executado; não substitui amostra humana.
+- [Avaliação humana](evaluation/humanos/README.md). Onde as notas cegas entram. Ainda não há notas.
 
 ## Mapa
 
@@ -35,6 +46,7 @@ prompt-engineering-ptbr/
 │   ├── metodologia.md
 │   ├── benchmark-ptbr-en.md
 │   ├── abnt-escopo.md
+│   ├── escrita-precisa-ptbr.md
 │   ├── guia-de-escrita-ptbr.md
 │   ├── checklist-de-prompt.md
 │   └── referencias.md
