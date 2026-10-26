@@ -43,4 +43,4 @@ Texto:
 
 Devolva o prompt reescrito. Se mudou o sentido para encurtar, diga o que saiu. Não chame a versão de otimizada antes de `checking-prompt`.
 
-O método longo e o lastro dos estudos estão em `docs/escrita-precisa-ptbr.md`.
+Os padrões por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O método longo e o lastro dos estudos estão em `docs/escrita-precisa-ptbr.md`.

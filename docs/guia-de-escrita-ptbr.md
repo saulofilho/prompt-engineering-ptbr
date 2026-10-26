@@ -62,7 +62,7 @@ Um exemplo do formato de saída, pequeno e fiel, costuma delimitar melhor do que
 
 **Status:** prática. Não isolada no v0.
 
-Quem precisa de precisão extrema, com o lastro de cada dica e o uso correto da ABNT, segue `docs/escrita-precisa-ptbr.md`.
+As formas prontas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. Quem precisa de precisão extrema, com o lastro de cada dica e o uso correto da ABNT, segue `docs/escrita-precisa-ptbr.md`.
 
 ## Ordem sugerida
 

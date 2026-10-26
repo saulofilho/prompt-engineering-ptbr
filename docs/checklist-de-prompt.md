@@ -1,6 +1,6 @@
 # Checklist de prompt
 
-Use antes de tratar um prompt como versão otimizada. A lista não prova qualidade de resposta. O método longo, para quem precisa ser exato em português, está em `docs/escrita-precisa-ptbr.md`.
+Use antes de tratar um prompt como versão otimizada. A lista não prova qualidade de resposta. As formas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O método longo, para quem precisa ser exato em português, está em `docs/escrita-precisa-ptbr.md`.
 
 - [ ] A primeira frase diz a tarefa, no imperativo.
 - [ ] O texto-fonte está separado da instrução por um rótulo.

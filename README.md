@@ -28,6 +28,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 ### Escrever em português
 
 - [Escrita precisa](docs/escrita-precisa-ptbr.md). Método para quem precisa ser exato: critério conferível, frase de ausência, diacrítico, termo estável, e o que as normas ABNT emprestam ao pedido.
+- [Padrões de prompt](docs/padroes-de-prompt.md). Formas para copiar, uma por tipo de tarefa do piloto: resumo, extração, classificação, código, escolha e pergunta com ausência.
 - [Guia curto](docs/guia-de-escrita-ptbr.md). Dez práticas de clareza, cada uma com o status da evidência (piloto, hipótese ou ainda não medido).
 - [Checklist](docs/checklist-de-prompt.md). Conferência antes de tratar uma redação como versão otimizada.
 - [Escopo da ABNT](docs/abnt-escopo.md). O que NBR 6023, 6028, 10520 e 14724 fazem neste repositório, e por que a sigla não nomeia um estilo de prompt.
@@ -78,6 +79,7 @@ prompt-engineering-ptbr/
 │   ├── benchmark-ptbr-en.md
 │   ├── abnt-escopo.md
 │   ├── escrita-precisa-ptbr.md
+│   ├── padroes-de-prompt.md
 │   ├── guia-de-escrita-ptbr.md
 │   ├── checklist-de-prompt.md
 │   └── referencias.md
