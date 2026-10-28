@@ -20,6 +20,9 @@ Todos os braços otimizados do piloto cabem nesta ordem.
 Termo:
 - [nome] significa [definição única]
 
+Público:
+- [quem lê a resposta, se não for quem escreve o pedido]
+
 Regras:
 - [critério que se confere]
 - [formato da resposta]
@@ -30,7 +33,9 @@ Texto:
 [fonte]
 ```
 
-O bloco `Termo:` entra quando a palavra pode oscilar. A frase `não informado` entra quando a fonte pode não ter o dado. O rótulo da fonte no piloto é `Texto:` ou `Contexto:`.
+O bloco `Termo:` entra quando a palavra pode oscilar. A frase `não informado` entra quando a fonte pode não ter o dado. O bloco `Público:` entra só quando o leitor da resposta é outra pessoa. O rótulo da fonte no piloto é `Texto:` ou `Contexto:`.
+
+Uma reescrita com uma ideia por frase e no máximo 20 palavras, sem trocar o critério, é o braço `pt_controlado`. No `o200k_base` ela gastou mais tokens de instrução do que a forma otimizada. O número e a decisão estão em `benchmarks/results/poc_v1_controlado.md`. O escopo da sigla que motivou essa reescrita está em `docs/ste-escopo.md`.
 
 ## Resumo com cota
 

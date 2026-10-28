@@ -1,0 +1,54 @@
+{
+  "versao": "v1",
+  "descricao": "Reescrita controlada da instrução pt_otimizado. Os marcadores de critério do v0 permanecem. O payload continua o de pares_v0.json. Esta forma não se declara conforme ao ASD-STE100.",
+  "itens": [
+    {
+      "id": "resumo-chamados",
+      "pt_controlado": "Resuma o texto em 5 tópicos.\nEscreva uma frase por tópico.\nUse no máximo 20 palavras em cada frase.\nEscreva a resposta em português brasileiro."
+    },
+    {
+      "id": "resumo-ata",
+      "pt_controlado": "Resuma o texto em 4 frases.\nUse no máximo 30 palavras em cada frase.\nEscreva a resposta em português brasileiro."
+    },
+    {
+      "id": "extrair-chamado",
+      "pt_controlado": "Extraia os campos cliente, pedido, problema e prazo.\nDevolva um único objeto JSON.\nNão escreva texto extra.\nEscreva os valores em português brasileiro."
+    },
+    {
+      "id": "extrair-cobranca",
+      "pt_controlado": "Extraia os campos numero, credor, vencimento e valor.\nDevolva um único objeto JSON.\nNão escreva texto extra.\nCopie os valores como estão no texto."
+    },
+    {
+      "id": "classificar-avaliacoes",
+      "pt_controlado": "Classifique cada item como positivo, neutro ou negativo.\nDevolva um array JSON com três objetos.\nUse os campos id e classe em cada objeto.\nNão escreva texto extra."
+    },
+    {
+      "id": "classificar-incidentes",
+      "pt_controlado": "Classifique cada frase como P1, P2 ou P3.\nP1: serviço indisponível para muitos clientes.\nP2: atraso relevante com contorno.\nP3: defeito localizado.\nDevolva um array JSON de objetos.\nUse os campos id e prioridade em cada objeto.\nNão escreva texto extra."
+    },
+    {
+      "id": "codigo-media-movel",
+      "pt_controlado": "Escreva a função Python media_movel(values: list[float], janela: int) -> list[float].\nUse uma janela fixa de 3 posições.\nDevolva somente o código.\nNão explique o código."
+    },
+    {
+      "id": "codigo-validar-cpf",
+      "pt_controlado": "Escreva a função Python cpf_valido(numero: str) -> bool.\nConfira os dígitos verificadores do CPF.\nRejeite um formato inválido.\nInclua dois testes com assert.\nDevolva somente o código."
+    },
+    {
+      "id": "escolher-fornecedor",
+      "pt_controlado": "Escolha um fornecedor.\nFaça uma escolha, A ou B.\nJustifique a escolha em no máximo 4 linhas.\nUse apenas os dados do texto.\nEscreva a resposta em português brasileiro."
+    },
+    {
+      "id": "verificar-prazo",
+      "pt_controlado": "Diga se a entrega foi no prazo ou fora do prazo.\nUse apenas o texto.\nSe faltar dado, responda exatamente: não informado.\nResponda em uma frase.\nEscreva a resposta em português brasileiro."
+    },
+    {
+      "id": "qa-abertura",
+      "pt_controlado": "Responda se a loja abre em 12 de outubro.\nUse apenas o texto.\nSe o texto não informar, responda exatamente: não informado.\nResponda em uma frase.\nEscreva a resposta em português brasileiro."
+    },
+    {
+      "id": "qa-tarifa",
+      "pt_controlado": "Informe o valor da transferência para outra titularidade no plano Anual.\nUse apenas o texto.\nSe o texto não informar, responda exatamente: não informado.\nResponda em uma frase.\nEscreva a resposta em português brasileiro."
+    }
+  ]
+}

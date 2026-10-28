@@ -83,3 +83,7 @@ Araújo (2025) registrou concordância humana baixa na avaliação de respostas.
 ## O que não fazer com o resultado
 
 Não promover o percentual do piloto a “o português custa X% a mais”. Não recomendar a variante vaga porque ela é curta. Não citar este repositório como prova de qualidade de resposta até que a fase de qualidade exista e os hashes batam com as hipóteses daquela versão.
+
+## Versão v1
+
+H6 e H7 estão em `HIPOTESES-v1.md`. O braço `pt_controlado` repete os marcadores do otimizado, com no máximo 20 palavras por segmento, e não pede a sigla ASD-STE100. A contagem está em `benchmarks/results/poc_v1_controlado.md`. H7 registra o estímulo de três formatos de saída e não tem token de resposta enquanto a API não devolver o `usage`.

@@ -8,6 +8,8 @@
 
 `04_gerar_e_avaliar.py` chama os modelos, mede formato, alucinação verificável e reprompt, e só publica a razão de Claude, Gemini ou Sabiá quando a API devolve a contagem.
 
+`05_controlado.py` confere a forma controlada e conta a H6. A H7 fica sem número.
+
 Não há notebook nesta versão. O script roda igual em CI e não depende de célula executada à mão. Um notebook, se entrar depois, deve chamar este arquivo em vez de copiar a contagem.
 
 ```bash

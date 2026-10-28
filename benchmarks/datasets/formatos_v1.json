@@ -1,0 +1,34 @@
+{
+  "versao": "v1",
+  "hipotese": "H7",
+  "estado": "estimulo registrado; saida nao medida",
+  "descricao": "A instrução pt_otimizado do v0 permanece. O sufixo só muda o formato pedido. A decisão usa tokens de saída da API e só vale se a checagem de formato passar. Contagem local de entrada não decide H7.",
+  "excluidos": [
+    "extrair-chamado",
+    "extrair-cobranca",
+    "classificar-avaliacoes",
+    "classificar-incidentes",
+    "codigo-media-movel",
+    "codigo-validar-cpf"
+  ],
+  "motivo_da_exclusao": "JSON e código deixariam de ser a tarefa se a resposta virasse diagrama ou página.",
+  "video": "fora desta versao",
+  "sufixo": {
+    "frases": "Entregue a resposta em frases.\nEscreva uma ideia por frase.\nEscreva a resposta em português brasileiro.",
+    "mermaid": "Entregue a resposta como um diagrama Mermaid.\nEscreva uma legenda de no máximo 4 linhas.\nEscreva a resposta em português brasileiro.",
+    "html": "Entregue a resposta como um documento HTML completo.\nInclua um título e o conteúdo no corpo.\nEscreva a resposta em português brasileiro."
+  },
+  "checagem": {
+    "frases": "A resposta não contém cerca mermaid nem a marca <html.",
+    "mermaid": "A resposta contém uma cerca mermaid.",
+    "html": "A resposta contém <html ou <!DOCTYPE."
+  },
+  "itens": [
+    "resumo-chamados",
+    "resumo-ata",
+    "escolher-fornecedor",
+    "verificar-prazo",
+    "qa-abertura",
+    "qa-tarifa"
+  ]
+}

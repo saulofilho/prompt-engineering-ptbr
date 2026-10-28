@@ -21,4 +21,4 @@ A ABNT não define estilo de prompt e não reduz token. Use a norma só no que e
 
 Separe três blocos quando o termo puder oscilar: termo (definição), fato (o que está na fonte), comentário (o que pode ser concluído).
 
-Detalhe das normas: `docs/abnt-escopo.md`.
+Detalhe das normas: `docs/abnt-escopo.md`. Outra especificação que não vira truque de token: `docs/ste-escopo.md`.

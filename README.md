@@ -22,6 +22,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 
 - [Manifesto](MANIFESTO.md). Tese do projeto: português preciso é legítimo; a ABNT não é técnica de token; o que o repositório afirma e o que recusa.
 - [Hipóteses](HIPOTESES.md). H1 a H5 pré-registradas, com limiar, escopo e o que uma contagem de tokens não pode decidir.
+- [Hipóteses v1](HIPOTESES-v1.md). H6, forma controlada contra a instrução otimizada, e H7, formato da saída, ainda sem chamada de modelo.
 - [Metodologia](docs/metodologia.md). Braços pareados, métricas, razão das somas, tokenizadores e ameaças à validade do piloto.
 - [Referências](docs/referencias.md). Fontes em formato de referência, com o que cada uma sustenta e o que não sustenta.
 
@@ -32,12 +33,14 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 - [Guia curto](docs/guia-de-escrita-ptbr.md). Dez práticas de clareza, cada uma com o status da evidência (piloto, hipótese ou ainda não medido).
 - [Checklist](docs/checklist-de-prompt.md). Conferência antes de tratar uma redação como versão otimizada.
 - [Escopo da ABNT](docs/abnt-escopo.md). O que NBR 6023, 6028, 10520 e 14724 fazem neste repositório, e por que a sigla não nomeia um estilo de prompt.
+- [Escopo do ASD-STE100](docs/ste-escopo.md). O que a especificação de inglês técnico empresta ao português, e por que a sigla não é truque de token nem conformidade com o dicionário.
 
 ### Benchmarks
 
 - [Protocolo PT-BR e inglês](docs/benchmark-ptbr-en.md). Como a comparação entre idiomas é desenhada, modelo a modelo, e o que fica de fora.
 - [Tabela por modelo](benchmarks/results/benchmark_modelos_ptbr_en.md). Razão de tokens do português paralelo sobre o inglês, no tokenizador publicado de cada família. Claude, Gemini e Sabiá ficam sem número.
 - [Piloto das hipóteses](benchmarks/results/poc_v0_tokenizacao.md). Contagem dos braços no `o200k_base` e no `cl100k_base`: estrutura, prêmio e diacrítico, com a decisão neste conjunto.
+- [Forma controlada](benchmarks/results/poc_v1_controlado.md). H6 no `o200k_base`: a instrução controlada ficou 5,5% maior que a otimizada, com os mesmos marcadores. H7 continua sem número.
 - [Custo em dólar](benchmarks/results/custo_usd.md). Entrada dos doze prompts convertida pela tabela de 22 out. 2026. Só há dólar onde existem tokens medidos e preço verificado.
 - [Geração e qualidade](benchmarks/results/geracao_qualidade.md). Chamada ao modelo, nota automática, alucinação verificável, reprompt e dólar do fluxo. Nesta execução as linhas estão vazias: não havia chave de API.
 - [Razão medida na API](benchmarks/results/benchmark_api_ptbr_en.md). PT/EN só com o `usage` que o provedor devolve. Sem chamada, a linha não é preenchida com outro tokenizador.
@@ -52,6 +55,8 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 ### Dados e execução
 
 - [Pares v0](benchmarks/datasets/pares_v0.json). Doze tarefas pareadas, com os marcadores de critério que os braços otimizado e coloquial precisam conservar.
+- [Forma controlada v1](benchmarks/datasets/pares_v1_controlado.json). A mesma tarefa, reescrita com uma ideia por frase e no máximo 20 palavras, sem pedir a sigla STE.
+- [Formatos v1](benchmarks/datasets/formatos_v1.json). Sufixos de frases, Mermaid e HTML para a H7. A saída ainda não foi chamada.
 - [Léxico v0](benchmarks/datasets/lexico_v0.json). Pares ortográficos para ver fragmentação de token. Não recomenda sinônimo mais curto.
 - [Catálogo de modelos](benchmarks/datasets/modelos_v0.json). Tokenizador de cada família. Claude, Gemini e Sabiá ficam como vocabulário não publicado.
 - [Preços](benchmarks/datasets/precos_v0.json). Tabela datada usada na conversão para dólar. Modelo sem linha fica sem custo.
@@ -65,6 +70,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 prompt-engineering-ptbr/
 ├── MANIFESTO.md
 ├── HIPOTESES.md
+├── HIPOTESES-v1.md
 ├── AGENTS.md
 ├── .cursor-plugin/plugin.json
 ├── .cursor/skills/
@@ -82,6 +88,7 @@ prompt-engineering-ptbr/
 │   ├── padroes-de-prompt.md
 │   ├── guia-de-escrita-ptbr.md
 │   ├── checklist-de-prompt.md
+│   ├── ste-escopo.md
 │   └── referencias.md
 ├── benchmarks/
 │   ├── datasets/
@@ -108,6 +115,7 @@ python3 -m venv .venv
 .venv/bin/python poc/02_benchmark_modelos.py
 .venv/bin/python poc/03_custo.py
 .venv/bin/python poc/04_gerar_e_avaliar.py
+.venv/bin/python poc/05_controlado.py
 ```
 
 Se `python3 -m venv` falhar por falta do pacote `python3-venv`, o `uv` cria o ambiente no lugar:
@@ -119,6 +127,7 @@ uv pip install -r requirements.txt --python .venv/bin/python
 .venv/bin/python poc/02_benchmark_modelos.py
 .venv/bin/python poc/03_custo.py
 .venv/bin/python poc/04_gerar_e_avaliar.py
+.venv/bin/python poc/05_controlado.py
 ```
 
 `02` baixa só o `tokenizer.json` dos modelos abertos. Não baixa peso. `03` aplica a tabela de preços aos tokens já contados. `04` chama o modelo se existir chave no ambiente (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY` ou `GOOGLE_API_KEY`, `MARITACA_API_KEY` ou `SABIA_API_KEY`). Sem chave, ele grava a linha como não medida e não inventa a razão.

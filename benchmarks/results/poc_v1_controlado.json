@@ -1,0 +1,1386 @@
+{
+  "versao": "v1",
+  "n_itens": 12,
+  "dataset_v0_sha256": "e8e0c771c7f49b117eb345e24e18f35f2a3418184e2f50cc46deadebb5606636",
+  "controlado_sha256": "35c7b6a4496afe075bb258aa6a61b6fd83853470b15b880ca862db973831b236",
+  "formatos_sha256": "37a59ffceb8068879597ee579481bb04a47181e31feabea78f03d0ca6534ecc1",
+  "hipoteses_sha256": "c1c41f49c02515d1e8d7bc2376cc4287cbf4fce62ebd24bccffca9dcec6ea525",
+  "encoding_primario": "o200k_base",
+  "aviso": "H6 é descritiva neste conjunto. H7 não foi medida.",
+  "medicoes": {
+    "o200k_base": {
+      "itens": [
+        {
+          "id": "resumo-chamados",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 31,
+              "palavras": 22,
+              "caracteres": 118,
+              "bytes_utf8": 122,
+              "tokens_por_palavra": 1.4090909090909092,
+              "caracteres_por_token": 3.806451612903226
+            },
+            "payload": {
+              "tokens": 65,
+              "palavras": 45,
+              "caracteres": 243,
+              "bytes_utf8": 245,
+              "tokens_por_palavra": 1.4444444444444444,
+              "caracteres_por_token": 3.7384615384615385
+            },
+            "completo": {
+              "tokens": 97,
+              "palavras": 67,
+              "caracteres": 363,
+              "bytes_utf8": 369,
+              "tokens_por_palavra": 1.4477611940298507,
+              "caracteres_por_token": 3.7422680412371134
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 37,
+              "palavras": 25,
+              "caracteres": 143,
+              "bytes_utf8": 147,
+              "tokens_por_palavra": 1.48,
+              "caracteres_por_token": 3.864864864864865
+            },
+            "payload": {
+              "tokens": 65,
+              "palavras": 45,
+              "caracteres": 243,
+              "bytes_utf8": 245,
+              "tokens_por_palavra": 1.4444444444444444,
+              "caracteres_por_token": 3.7384615384615385
+            },
+            "completo": {
+              "tokens": 102,
+              "palavras": 70,
+              "caracteres": 388,
+              "bytes_utf8": 394,
+              "tokens_por_palavra": 1.457142857142857,
+              "caracteres_por_token": 3.803921568627451
+            }
+          }
+        },
+        {
+          "id": "resumo-ata",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 26,
+              "palavras": 19,
+              "caracteres": 104,
+              "bytes_utf8": 106,
+              "tokens_por_palavra": 1.368421052631579,
+              "caracteres_por_token": 4.0
+            },
+            "payload": {
+              "tokens": 59,
+              "palavras": 43,
+              "caracteres": 236,
+              "bytes_utf8": 241,
+              "tokens_por_palavra": 1.372093023255814,
+              "caracteres_por_token": 4.0
+            },
+            "completo": {
+              "tokens": 86,
+              "palavras": 62,
+              "caracteres": 342,
+              "bytes_utf8": 349,
+              "tokens_por_palavra": 1.3870967741935485,
+              "caracteres_por_token": 3.9767441860465116
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 28,
+              "palavras": 20,
+              "caracteres": 112,
+              "bytes_utf8": 114,
+              "tokens_por_palavra": 1.4,
+              "caracteres_por_token": 4.0
+            },
+            "payload": {
+              "tokens": 59,
+              "palavras": 43,
+              "caracteres": 236,
+              "bytes_utf8": 241,
+              "tokens_por_palavra": 1.372093023255814,
+              "caracteres_por_token": 4.0
+            },
+            "completo": {
+              "tokens": 87,
+              "palavras": 63,
+              "caracteres": 350,
+              "bytes_utf8": 357,
+              "tokens_por_palavra": 1.380952380952381,
+              "caracteres_por_token": 4.022988505747127
+            }
+          }
+        },
+        {
+          "id": "extrair-chamado",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 31,
+              "palavras": 23,
+              "caracteres": 135,
+              "bytes_utf8": 137,
+              "tokens_por_palavra": 1.3478260869565217,
+              "caracteres_por_token": 4.354838709677419
+            },
+            "payload": {
+              "tokens": 42,
+              "palavras": 31,
+              "caracteres": 166,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 1.3548387096774193,
+              "caracteres_por_token": 3.9523809523809526
+            },
+            "completo": {
+              "tokens": 74,
+              "palavras": 54,
+              "caracteres": 303,
+              "bytes_utf8": 308,
+              "tokens_por_palavra": 1.3703703703703705,
+              "caracteres_por_token": 4.094594594594595
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 35,
+              "palavras": 23,
+              "caracteres": 151,
+              "bytes_utf8": 154,
+              "tokens_por_palavra": 1.5217391304347827,
+              "caracteres_por_token": 4.314285714285714
+            },
+            "payload": {
+              "tokens": 42,
+              "palavras": 31,
+              "caracteres": 166,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 1.3548387096774193,
+              "caracteres_por_token": 3.9523809523809526
+            },
+            "completo": {
+              "tokens": 77,
+              "palavras": 54,
+              "caracteres": 319,
+              "bytes_utf8": 325,
+              "tokens_por_palavra": 1.4259259259259258,
+              "caracteres_por_token": 4.142857142857143
+            }
+          }
+        },
+        {
+          "id": "extrair-cobranca",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 36,
+              "palavras": 26,
+              "caracteres": 141,
+              "bytes_utf8": 143,
+              "tokens_por_palavra": 1.3846153846153846,
+              "caracteres_por_token": 3.9166666666666665
+            },
+            "payload": {
+              "tokens": 50,
+              "palavras": 31,
+              "caracteres": 160,
+              "bytes_utf8": 166,
+              "tokens_por_palavra": 1.6129032258064515,
+              "caracteres_por_token": 3.2
+            },
+            "completo": {
+              "tokens": 87,
+              "palavras": 57,
+              "caracteres": 303,
+              "bytes_utf8": 311,
+              "tokens_por_palavra": 1.5263157894736843,
+              "caracteres_por_token": 3.4827586206896552
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 37,
+              "palavras": 24,
+              "caracteres": 146,
+              "bytes_utf8": 149,
+              "tokens_por_palavra": 1.5416666666666667,
+              "caracteres_por_token": 3.945945945945946
+            },
+            "payload": {
+              "tokens": 50,
+              "palavras": 31,
+              "caracteres": 160,
+              "bytes_utf8": 166,
+              "tokens_por_palavra": 1.6129032258064515,
+              "caracteres_por_token": 3.2
+            },
+            "completo": {
+              "tokens": 87,
+              "palavras": 55,
+              "caracteres": 308,
+              "bytes_utf8": 317,
+              "tokens_por_palavra": 1.5818181818181818,
+              "caracteres_por_token": 3.5402298850574714
+            }
+          }
+        },
+        {
+          "id": "classificar-avaliacoes",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 32,
+              "palavras": 24,
+              "caracteres": 133,
+              "bytes_utf8": 134,
+              "tokens_por_palavra": 1.3333333333333333,
+              "caracteres_por_token": 4.15625
+            },
+            "payload": {
+              "tokens": 40,
+              "palavras": 25,
+              "caracteres": 130,
+              "bytes_utf8": 132,
+              "tokens_por_palavra": 1.6,
+              "caracteres_por_token": 3.25
+            },
+            "completo": {
+              "tokens": 73,
+              "palavras": 49,
+              "caracteres": 265,
+              "bytes_utf8": 268,
+              "tokens_por_palavra": 1.489795918367347,
+              "caracteres_por_token": 3.6301369863013697
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 38,
+              "palavras": 28,
+              "caracteres": 163,
+              "bytes_utf8": 165,
+              "tokens_por_palavra": 1.3571428571428572,
+              "caracteres_por_token": 4.2894736842105265
+            },
+            "payload": {
+              "tokens": 40,
+              "palavras": 25,
+              "caracteres": 130,
+              "bytes_utf8": 132,
+              "tokens_por_palavra": 1.6,
+              "caracteres_por_token": 3.25
+            },
+            "completo": {
+              "tokens": 78,
+              "palavras": 53,
+              "caracteres": 295,
+              "bytes_utf8": 299,
+              "tokens_por_palavra": 1.471698113207547,
+              "caracteres_por_token": 3.782051282051282
+            }
+          }
+        },
+        {
+          "id": "classificar-incidentes",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 64,
+              "palavras": 39,
+              "caracteres": 239,
+              "bytes_utf8": 243,
+              "tokens_por_palavra": 1.641025641025641,
+              "caracteres_por_token": 3.734375
+            },
+            "payload": {
+              "tokens": 38,
+              "palavras": 28,
+              "caracteres": 155,
+              "bytes_utf8": 159,
+              "tokens_por_palavra": 1.3571428571428572,
+              "caracteres_por_token": 4.078947368421052
+            },
+            "completo": {
+              "tokens": 103,
+              "palavras": 67,
+              "caracteres": 396,
+              "bytes_utf8": 404,
+              "tokens_por_palavra": 1.537313432835821,
+              "caracteres_por_token": 3.8446601941747574
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 66,
+              "palavras": 41,
+              "caracteres": 252,
+              "bytes_utf8": 255,
+              "tokens_por_palavra": 1.6097560975609757,
+              "caracteres_por_token": 3.8181818181818183
+            },
+            "payload": {
+              "tokens": 38,
+              "palavras": 28,
+              "caracteres": 155,
+              "bytes_utf8": 159,
+              "tokens_por_palavra": 1.3571428571428572,
+              "caracteres_por_token": 4.078947368421052
+            },
+            "completo": {
+              "tokens": 104,
+              "palavras": 69,
+              "caracteres": 409,
+              "bytes_utf8": 416,
+              "tokens_por_palavra": 1.5072463768115942,
+              "caracteres_por_token": 3.9326923076923075
+            }
+          }
+        },
+        {
+          "id": "codigo-media-movel",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 45,
+              "palavras": 25,
+              "caracteres": 163,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 1.8,
+              "caracteres_por_token": 3.6222222222222222
+            },
+            "payload": {
+              "tokens": 24,
+              "palavras": 14,
+              "caracteres": 93,
+              "bytes_utf8": 97,
+              "tokens_por_palavra": 1.7142857142857142,
+              "caracteres_por_token": 3.875
+            },
+            "completo": {
+              "tokens": 70,
+              "palavras": 39,
+              "caracteres": 258,
+              "bytes_utf8": 268,
+              "tokens_por_palavra": 1.794871794871795,
+              "caracteres_por_token": 3.6857142857142855
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 45,
+              "palavras": 25,
+              "caracteres": 169,
+              "bytes_utf8": 176,
+              "tokens_por_palavra": 1.8,
+              "caracteres_por_token": 3.7555555555555555
+            },
+            "payload": {
+              "tokens": 24,
+              "palavras": 14,
+              "caracteres": 93,
+              "bytes_utf8": 97,
+              "tokens_por_palavra": 1.7142857142857142,
+              "caracteres_por_token": 3.875
+            },
+            "completo": {
+              "tokens": 69,
+              "palavras": 39,
+              "caracteres": 264,
+              "bytes_utf8": 275,
+              "tokens_por_palavra": 1.7692307692307692,
+              "caracteres_por_token": 3.8260869565217392
+            }
+          }
+        },
+        {
+          "id": "codigo-validar-cpf",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 51,
+              "palavras": 31,
+              "caracteres": 194,
+              "bytes_utf8": 199,
+              "tokens_por_palavra": 1.6451612903225807,
+              "caracteres_por_token": 3.803921568627451
+            },
+            "payload": {
+              "tokens": 22,
+              "palavras": 17,
+              "caracteres": 100,
+              "bytes_utf8": 102,
+              "tokens_por_palavra": 1.2941176470588236,
+              "caracteres_por_token": 4.545454545454546
+            },
+            "completo": {
+              "tokens": 74,
+              "palavras": 48,
+              "caracteres": 296,
+              "bytes_utf8": 303,
+              "tokens_por_palavra": 1.5416666666666667,
+              "caracteres_por_token": 4.0
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 48,
+              "palavras": 27,
+              "caracteres": 183,
+              "bytes_utf8": 188,
+              "tokens_por_palavra": 1.7777777777777777,
+              "caracteres_por_token": 3.8125
+            },
+            "payload": {
+              "tokens": 22,
+              "palavras": 17,
+              "caracteres": 100,
+              "bytes_utf8": 102,
+              "tokens_por_palavra": 1.2941176470588236,
+              "caracteres_por_token": 4.545454545454546
+            },
+            "completo": {
+              "tokens": 70,
+              "palavras": 44,
+              "caracteres": 285,
+              "bytes_utf8": 292,
+              "tokens_por_palavra": 1.5909090909090908,
+              "caracteres_por_token": 4.071428571428571
+            }
+          }
+        },
+        {
+          "id": "escolher-fornecedor",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 39,
+              "palavras": 29,
+              "caracteres": 153,
+              "bytes_utf8": 155,
+              "tokens_por_palavra": 1.3448275862068966,
+              "caracteres_por_token": 3.923076923076923
+            },
+            "payload": {
+              "tokens": 68,
+              "palavras": 41,
+              "caracteres": 201,
+              "bytes_utf8": 204,
+              "tokens_por_palavra": 1.6585365853658536,
+              "caracteres_por_token": 2.9558823529411766
+            },
+            "completo": {
+              "tokens": 108,
+              "palavras": 70,
+              "caracteres": 356,
+              "bytes_utf8": 361,
+              "tokens_por_palavra": 1.542857142857143,
+              "caracteres_por_token": 3.2962962962962963
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 40,
+              "palavras": 29,
+              "caracteres": 166,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 1.3793103448275863,
+              "caracteres_por_token": 4.15
+            },
+            "payload": {
+              "tokens": 68,
+              "palavras": 41,
+              "caracteres": 201,
+              "bytes_utf8": 204,
+              "tokens_por_palavra": 1.6585365853658536,
+              "caracteres_por_token": 2.9558823529411766
+            },
+            "completo": {
+              "tokens": 108,
+              "palavras": 70,
+              "caracteres": 369,
+              "bytes_utf8": 375,
+              "tokens_por_palavra": 1.542857142857143,
+              "caracteres_por_token": 3.4166666666666665
+            }
+          }
+        },
+        {
+          "id": "verificar-prazo",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 42,
+              "palavras": 33,
+              "caracteres": 182,
+              "bytes_utf8": 184,
+              "tokens_por_palavra": 1.2727272727272727,
+              "caracteres_por_token": 4.333333333333333
+            },
+            "payload": {
+              "tokens": 37,
+              "palavras": 27,
+              "caracteres": 143,
+              "bytes_utf8": 147,
+              "tokens_por_palavra": 1.3703703703703705,
+              "caracteres_por_token": 3.864864864864865
+            },
+            "completo": {
+              "tokens": 80,
+              "palavras": 60,
+              "caracteres": 327,
+              "bytes_utf8": 333,
+              "tokens_por_palavra": 1.3333333333333333,
+              "caracteres_por_token": 4.0875
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 45,
+              "palavras": 32,
+              "caracteres": 187,
+              "bytes_utf8": 189,
+              "tokens_por_palavra": 1.40625,
+              "caracteres_por_token": 4.155555555555556
+            },
+            "payload": {
+              "tokens": 37,
+              "palavras": 27,
+              "caracteres": 143,
+              "bytes_utf8": 147,
+              "tokens_por_palavra": 1.3703703703703705,
+              "caracteres_por_token": 3.864864864864865
+            },
+            "completo": {
+              "tokens": 82,
+              "palavras": 59,
+              "caracteres": 332,
+              "bytes_utf8": 338,
+              "tokens_por_palavra": 1.3898305084745763,
+              "caracteres_por_token": 4.048780487804878
+            }
+          }
+        },
+        {
+          "id": "qa-abertura",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 44,
+              "palavras": 33,
+              "caracteres": 184,
+              "bytes_utf8": 187,
+              "tokens_por_palavra": 1.3333333333333333,
+              "caracteres_por_token": 4.181818181818182
+            },
+            "payload": {
+              "tokens": 33,
+              "palavras": 23,
+              "caracteres": 115,
+              "bytes_utf8": 121,
+              "tokens_por_palavra": 1.434782608695652,
+              "caracteres_por_token": 3.484848484848485
+            },
+            "completo": {
+              "tokens": 78,
+              "palavras": 56,
+              "caracteres": 301,
+              "bytes_utf8": 310,
+              "tokens_por_palavra": 1.3928571428571428,
+              "caracteres_por_token": 3.858974358974359
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 47,
+              "palavras": 32,
+              "caracteres": 189,
+              "bytes_utf8": 192,
+              "tokens_por_palavra": 1.46875,
+              "caracteres_por_token": 4.0212765957446805
+            },
+            "payload": {
+              "tokens": 33,
+              "palavras": 23,
+              "caracteres": 115,
+              "bytes_utf8": 121,
+              "tokens_por_palavra": 1.434782608695652,
+              "caracteres_por_token": 3.484848484848485
+            },
+            "completo": {
+              "tokens": 80,
+              "palavras": 55,
+              "caracteres": 306,
+              "bytes_utf8": 315,
+              "tokens_por_palavra": 1.4545454545454546,
+              "caracteres_por_token": 3.825
+            }
+          }
+        },
+        {
+          "id": "qa-tarifa",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 46,
+              "palavras": 35,
+              "caracteres": 215,
+              "bytes_utf8": 219,
+              "tokens_por_palavra": 1.3142857142857143,
+              "caracteres_por_token": 4.673913043478261
+            },
+            "payload": {
+              "tokens": 43,
+              "palavras": 30,
+              "caracteres": 168,
+              "bytes_utf8": 172,
+              "tokens_por_palavra": 1.4333333333333333,
+              "caracteres_por_token": 3.9069767441860463
+            },
+            "completo": {
+              "tokens": 90,
+              "palavras": 65,
+              "caracteres": 385,
+              "bytes_utf8": 393,
+              "tokens_por_palavra": 1.3846153846153846,
+              "caracteres_por_token": 4.277777777777778
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 48,
+              "palavras": 34,
+              "caracteres": 220,
+              "bytes_utf8": 224,
+              "tokens_por_palavra": 1.411764705882353,
+              "caracteres_por_token": 4.583333333333333
+            },
+            "payload": {
+              "tokens": 43,
+              "palavras": 30,
+              "caracteres": 168,
+              "bytes_utf8": 172,
+              "tokens_por_palavra": 1.4333333333333333,
+              "caracteres_por_token": 3.9069767441860463
+            },
+            "completo": {
+              "tokens": 91,
+              "palavras": 64,
+              "caracteres": 390,
+              "bytes_utf8": 398,
+              "tokens_por_palavra": 1.421875,
+              "caracteres_por_token": 4.285714285714286
+            }
+          }
+        }
+      ],
+      "contrastes": {
+        "h6_instrucao": {
+          "escopo": "instrucao",
+          "tokens_esquerda": 514,
+          "tokens_direita": 487,
+          "razao_tokens": 1.055441478439425,
+          "reducao": -0.05544147843942504,
+          "razao_caracteres": 1.0611932687404386,
+          "razao_palavras": 1.0029498525073746,
+          "razao_tokens_sobre_razao_caracteres": 0.9945798842958733
+        },
+        "h6_completo": {
+          "escopo": "completo",
+          "tokens_esquerda": 1035,
+          "tokens_direita": 1020,
+          "razao_tokens": 1.0147058823529411,
+          "reducao": -0.014705882352941124,
+          "razao_caracteres": 1.030808729139923,
+          "razao_palavras": 1.0014409221902016,
+          "razao_tokens_sobre_razao_caracteres": 0.9843784338143724
+        }
+      },
+      "decisao_h6": "compatível com H6 neste conjunto"
+    },
+    "cl100k_base": {
+      "itens": [
+        {
+          "id": "resumo-chamados",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 41,
+              "palavras": 22,
+              "caracteres": 118,
+              "bytes_utf8": 122,
+              "tokens_por_palavra": 1.8636363636363635,
+              "caracteres_por_token": 2.8780487804878048
+            },
+            "payload": {
+              "tokens": 74,
+              "palavras": 45,
+              "caracteres": 243,
+              "bytes_utf8": 245,
+              "tokens_por_palavra": 1.6444444444444444,
+              "caracteres_por_token": 3.2837837837837838
+            },
+            "completo": {
+              "tokens": 116,
+              "palavras": 67,
+              "caracteres": 363,
+              "bytes_utf8": 369,
+              "tokens_por_palavra": 1.7313432835820894,
+              "caracteres_por_token": 3.1293103448275863
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 46,
+              "palavras": 25,
+              "caracteres": 143,
+              "bytes_utf8": 147,
+              "tokens_por_palavra": 1.84,
+              "caracteres_por_token": 3.108695652173913
+            },
+            "payload": {
+              "tokens": 74,
+              "palavras": 45,
+              "caracteres": 243,
+              "bytes_utf8": 245,
+              "tokens_por_palavra": 1.6444444444444444,
+              "caracteres_por_token": 3.2837837837837838
+            },
+            "completo": {
+              "tokens": 120,
+              "palavras": 70,
+              "caracteres": 388,
+              "bytes_utf8": 394,
+              "tokens_por_palavra": 1.7142857142857142,
+              "caracteres_por_token": 3.2333333333333334
+            }
+          }
+        },
+        {
+          "id": "resumo-ata",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 32,
+              "palavras": 19,
+              "caracteres": 104,
+              "bytes_utf8": 106,
+              "tokens_por_palavra": 1.6842105263157894,
+              "caracteres_por_token": 3.25
+            },
+            "payload": {
+              "tokens": 72,
+              "palavras": 43,
+              "caracteres": 236,
+              "bytes_utf8": 241,
+              "tokens_por_palavra": 1.6744186046511629,
+              "caracteres_por_token": 3.2777777777777777
+            },
+            "completo": {
+              "tokens": 105,
+              "palavras": 62,
+              "caracteres": 342,
+              "bytes_utf8": 349,
+              "tokens_por_palavra": 1.6935483870967742,
+              "caracteres_por_token": 3.257142857142857
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 33,
+              "palavras": 20,
+              "caracteres": 112,
+              "bytes_utf8": 114,
+              "tokens_por_palavra": 1.65,
+              "caracteres_por_token": 3.393939393939394
+            },
+            "payload": {
+              "tokens": 72,
+              "palavras": 43,
+              "caracteres": 236,
+              "bytes_utf8": 241,
+              "tokens_por_palavra": 1.6744186046511629,
+              "caracteres_por_token": 3.2777777777777777
+            },
+            "completo": {
+              "tokens": 105,
+              "palavras": 63,
+              "caracteres": 350,
+              "bytes_utf8": 357,
+              "tokens_por_palavra": 1.6666666666666667,
+              "caracteres_por_token": 3.3333333333333335
+            }
+          }
+        },
+        {
+          "id": "extrair-chamado",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 36,
+              "palavras": 23,
+              "caracteres": 135,
+              "bytes_utf8": 137,
+              "tokens_por_palavra": 1.565217391304348,
+              "caracteres_por_token": 3.75
+            },
+            "payload": {
+              "tokens": 51,
+              "palavras": 31,
+              "caracteres": 166,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 1.6451612903225807,
+              "caracteres_por_token": 3.2549019607843137
+            },
+            "completo": {
+              "tokens": 88,
+              "palavras": 54,
+              "caracteres": 303,
+              "bytes_utf8": 308,
+              "tokens_por_palavra": 1.6296296296296295,
+              "caracteres_por_token": 3.4431818181818183
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 39,
+              "palavras": 23,
+              "caracteres": 151,
+              "bytes_utf8": 154,
+              "tokens_por_palavra": 1.6956521739130435,
+              "caracteres_por_token": 3.871794871794872
+            },
+            "payload": {
+              "tokens": 51,
+              "palavras": 31,
+              "caracteres": 166,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 1.6451612903225807,
+              "caracteres_por_token": 3.2549019607843137
+            },
+            "completo": {
+              "tokens": 90,
+              "palavras": 54,
+              "caracteres": 319,
+              "bytes_utf8": 325,
+              "tokens_por_palavra": 1.6666666666666667,
+              "caracteres_por_token": 3.5444444444444443
+            }
+          }
+        },
+        {
+          "id": "extrair-cobranca",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 39,
+              "palavras": 26,
+              "caracteres": 141,
+              "bytes_utf8": 143,
+              "tokens_por_palavra": 1.5,
+              "caracteres_por_token": 3.6153846153846154
+            },
+            "payload": {
+              "tokens": 57,
+              "palavras": 31,
+              "caracteres": 160,
+              "bytes_utf8": 166,
+              "tokens_por_palavra": 1.8387096774193548,
+              "caracteres_por_token": 2.807017543859649
+            },
+            "completo": {
+              "tokens": 97,
+              "palavras": 57,
+              "caracteres": 303,
+              "bytes_utf8": 311,
+              "tokens_por_palavra": 1.7017543859649122,
+              "caracteres_por_token": 3.1237113402061856
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 38,
+              "palavras": 24,
+              "caracteres": 146,
+              "bytes_utf8": 149,
+              "tokens_por_palavra": 1.5833333333333333,
+              "caracteres_por_token": 3.8421052631578947
+            },
+            "payload": {
+              "tokens": 57,
+              "palavras": 31,
+              "caracteres": 160,
+              "bytes_utf8": 166,
+              "tokens_por_palavra": 1.8387096774193548,
+              "caracteres_por_token": 2.807017543859649
+            },
+            "completo": {
+              "tokens": 95,
+              "palavras": 55,
+              "caracteres": 308,
+              "bytes_utf8": 317,
+              "tokens_por_palavra": 1.7272727272727273,
+              "caracteres_por_token": 3.2421052631578946
+            }
+          }
+        },
+        {
+          "id": "classificar-avaliacoes",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 35,
+              "palavras": 24,
+              "caracteres": 133,
+              "bytes_utf8": 134,
+              "tokens_por_palavra": 1.4583333333333333,
+              "caracteres_por_token": 3.8
+            },
+            "payload": {
+              "tokens": 48,
+              "palavras": 25,
+              "caracteres": 130,
+              "bytes_utf8": 132,
+              "tokens_por_palavra": 1.92,
+              "caracteres_por_token": 2.7083333333333335
+            },
+            "completo": {
+              "tokens": 84,
+              "palavras": 49,
+              "caracteres": 265,
+              "bytes_utf8": 268,
+              "tokens_por_palavra": 1.7142857142857142,
+              "caracteres_por_token": 3.1547619047619047
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 40,
+              "palavras": 28,
+              "caracteres": 163,
+              "bytes_utf8": 165,
+              "tokens_por_palavra": 1.4285714285714286,
+              "caracteres_por_token": 4.075
+            },
+            "payload": {
+              "tokens": 48,
+              "palavras": 25,
+              "caracteres": 130,
+              "bytes_utf8": 132,
+              "tokens_por_palavra": 1.92,
+              "caracteres_por_token": 2.7083333333333335
+            },
+            "completo": {
+              "tokens": 88,
+              "palavras": 53,
+              "caracteres": 295,
+              "bytes_utf8": 299,
+              "tokens_por_palavra": 1.6603773584905661,
+              "caracteres_por_token": 3.352272727272727
+            }
+          }
+        },
+        {
+          "id": "classificar-incidentes",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 71,
+              "palavras": 39,
+              "caracteres": 239,
+              "bytes_utf8": 243,
+              "tokens_por_palavra": 1.8205128205128205,
+              "caracteres_por_token": 3.3661971830985915
+            },
+            "payload": {
+              "tokens": 43,
+              "palavras": 28,
+              "caracteres": 155,
+              "bytes_utf8": 159,
+              "tokens_por_palavra": 1.5357142857142858,
+              "caracteres_por_token": 3.604651162790698
+            },
+            "completo": {
+              "tokens": 115,
+              "palavras": 67,
+              "caracteres": 396,
+              "bytes_utf8": 404,
+              "tokens_por_palavra": 1.7164179104477613,
+              "caracteres_por_token": 3.4434782608695653
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 72,
+              "palavras": 41,
+              "caracteres": 252,
+              "bytes_utf8": 255,
+              "tokens_por_palavra": 1.7560975609756098,
+              "caracteres_por_token": 3.5
+            },
+            "payload": {
+              "tokens": 43,
+              "palavras": 28,
+              "caracteres": 155,
+              "bytes_utf8": 159,
+              "tokens_por_palavra": 1.5357142857142858,
+              "caracteres_por_token": 3.604651162790698
+            },
+            "completo": {
+              "tokens": 115,
+              "palavras": 69,
+              "caracteres": 409,
+              "bytes_utf8": 416,
+              "tokens_por_palavra": 1.6666666666666667,
+              "caracteres_por_token": 3.5565217391304347
+            }
+          }
+        },
+        {
+          "id": "codigo-media-movel",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 51,
+              "palavras": 25,
+              "caracteres": 163,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 2.04,
+              "caracteres_por_token": 3.196078431372549
+            },
+            "payload": {
+              "tokens": 25,
+              "palavras": 14,
+              "caracteres": 93,
+              "bytes_utf8": 97,
+              "tokens_por_palavra": 1.7857142857142858,
+              "caracteres_por_token": 3.72
+            },
+            "completo": {
+              "tokens": 77,
+              "palavras": 39,
+              "caracteres": 258,
+              "bytes_utf8": 268,
+              "tokens_por_palavra": 1.9743589743589745,
+              "caracteres_por_token": 3.3506493506493507
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 49,
+              "palavras": 25,
+              "caracteres": 169,
+              "bytes_utf8": 176,
+              "tokens_por_palavra": 1.96,
+              "caracteres_por_token": 3.4489795918367347
+            },
+            "payload": {
+              "tokens": 25,
+              "palavras": 14,
+              "caracteres": 93,
+              "bytes_utf8": 97,
+              "tokens_por_palavra": 1.7857142857142858,
+              "caracteres_por_token": 3.72
+            },
+            "completo": {
+              "tokens": 74,
+              "palavras": 39,
+              "caracteres": 264,
+              "bytes_utf8": 275,
+              "tokens_por_palavra": 1.8974358974358974,
+              "caracteres_por_token": 3.5675675675675675
+            }
+          }
+        },
+        {
+          "id": "codigo-validar-cpf",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 58,
+              "palavras": 31,
+              "caracteres": 194,
+              "bytes_utf8": 199,
+              "tokens_por_palavra": 1.8709677419354838,
+              "caracteres_por_token": 3.3448275862068964
+            },
+            "payload": {
+              "tokens": 26,
+              "palavras": 17,
+              "caracteres": 100,
+              "bytes_utf8": 102,
+              "tokens_por_palavra": 1.5294117647058822,
+              "caracteres_por_token": 3.8461538461538463
+            },
+            "completo": {
+              "tokens": 85,
+              "palavras": 48,
+              "caracteres": 296,
+              "bytes_utf8": 303,
+              "tokens_por_palavra": 1.7708333333333333,
+              "caracteres_por_token": 3.4823529411764707
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 54,
+              "palavras": 27,
+              "caracteres": 183,
+              "bytes_utf8": 188,
+              "tokens_por_palavra": 2.0,
+              "caracteres_por_token": 3.388888888888889
+            },
+            "payload": {
+              "tokens": 26,
+              "palavras": 17,
+              "caracteres": 100,
+              "bytes_utf8": 102,
+              "tokens_por_palavra": 1.5294117647058822,
+              "caracteres_por_token": 3.8461538461538463
+            },
+            "completo": {
+              "tokens": 80,
+              "palavras": 44,
+              "caracteres": 285,
+              "bytes_utf8": 292,
+              "tokens_por_palavra": 1.8181818181818181,
+              "caracteres_por_token": 3.5625
+            }
+          }
+        },
+        {
+          "id": "escolher-fornecedor",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 47,
+              "palavras": 29,
+              "caracteres": 153,
+              "bytes_utf8": 155,
+              "tokens_por_palavra": 1.6206896551724137,
+              "caracteres_por_token": 3.25531914893617
+            },
+            "payload": {
+              "tokens": 71,
+              "palavras": 41,
+              "caracteres": 201,
+              "bytes_utf8": 204,
+              "tokens_por_palavra": 1.7317073170731707,
+              "caracteres_por_token": 2.8309859154929575
+            },
+            "completo": {
+              "tokens": 119,
+              "palavras": 70,
+              "caracteres": 356,
+              "bytes_utf8": 361,
+              "tokens_por_palavra": 1.7,
+              "caracteres_por_token": 2.991596638655462
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 49,
+              "palavras": 29,
+              "caracteres": 166,
+              "bytes_utf8": 169,
+              "tokens_por_palavra": 1.6896551724137931,
+              "caracteres_por_token": 3.3877551020408165
+            },
+            "payload": {
+              "tokens": 71,
+              "palavras": 41,
+              "caracteres": 201,
+              "bytes_utf8": 204,
+              "tokens_por_palavra": 1.7317073170731707,
+              "caracteres_por_token": 2.8309859154929575
+            },
+            "completo": {
+              "tokens": 120,
+              "palavras": 70,
+              "caracteres": 369,
+              "bytes_utf8": 375,
+              "tokens_por_palavra": 1.7142857142857142,
+              "caracteres_por_token": 3.075
+            }
+          }
+        },
+        {
+          "id": "verificar-prazo",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 54,
+              "palavras": 33,
+              "caracteres": 182,
+              "bytes_utf8": 184,
+              "tokens_por_palavra": 1.6363636363636365,
+              "caracteres_por_token": 3.3703703703703702
+            },
+            "payload": {
+              "tokens": 45,
+              "palavras": 27,
+              "caracteres": 143,
+              "bytes_utf8": 147,
+              "tokens_por_palavra": 1.6666666666666667,
+              "caracteres_por_token": 3.1777777777777776
+            },
+            "completo": {
+              "tokens": 100,
+              "palavras": 60,
+              "caracteres": 327,
+              "bytes_utf8": 333,
+              "tokens_por_palavra": 1.6666666666666667,
+              "caracteres_por_token": 3.27
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 55,
+              "palavras": 32,
+              "caracteres": 187,
+              "bytes_utf8": 189,
+              "tokens_por_palavra": 1.71875,
+              "caracteres_por_token": 3.4
+            },
+            "payload": {
+              "tokens": 45,
+              "palavras": 27,
+              "caracteres": 143,
+              "bytes_utf8": 147,
+              "tokens_por_palavra": 1.6666666666666667,
+              "caracteres_por_token": 3.1777777777777776
+            },
+            "completo": {
+              "tokens": 100,
+              "palavras": 59,
+              "caracteres": 332,
+              "bytes_utf8": 338,
+              "tokens_por_palavra": 1.694915254237288,
+              "caracteres_por_token": 3.32
+            }
+          }
+        },
+        {
+          "id": "qa-abertura",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 57,
+              "palavras": 33,
+              "caracteres": 184,
+              "bytes_utf8": 187,
+              "tokens_por_palavra": 1.7272727272727273,
+              "caracteres_por_token": 3.2280701754385963
+            },
+            "payload": {
+              "tokens": 39,
+              "palavras": 23,
+              "caracteres": 115,
+              "bytes_utf8": 121,
+              "tokens_por_palavra": 1.6956521739130435,
+              "caracteres_por_token": 2.948717948717949
+            },
+            "completo": {
+              "tokens": 97,
+              "palavras": 56,
+              "caracteres": 301,
+              "bytes_utf8": 310,
+              "tokens_por_palavra": 1.7321428571428572,
+              "caracteres_por_token": 3.1030927835051547
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 58,
+              "palavras": 32,
+              "caracteres": 189,
+              "bytes_utf8": 192,
+              "tokens_por_palavra": 1.8125,
+              "caracteres_por_token": 3.2586206896551726
+            },
+            "payload": {
+              "tokens": 39,
+              "palavras": 23,
+              "caracteres": 115,
+              "bytes_utf8": 121,
+              "tokens_por_palavra": 1.6956521739130435,
+              "caracteres_por_token": 2.948717948717949
+            },
+            "completo": {
+              "tokens": 97,
+              "palavras": 55,
+              "caracteres": 306,
+              "bytes_utf8": 315,
+              "tokens_por_palavra": 1.7636363636363637,
+              "caracteres_por_token": 3.154639175257732
+            }
+          }
+        },
+        {
+          "id": "qa-tarifa",
+          "pt_otimizado": {
+            "instrucao": {
+              "tokens": 57,
+              "palavras": 35,
+              "caracteres": 215,
+              "bytes_utf8": 219,
+              "tokens_por_palavra": 1.6285714285714286,
+              "caracteres_por_token": 3.7719298245614037
+            },
+            "payload": {
+              "tokens": 49,
+              "palavras": 30,
+              "caracteres": 168,
+              "bytes_utf8": 172,
+              "tokens_por_palavra": 1.6333333333333333,
+              "caracteres_por_token": 3.4285714285714284
+            },
+            "completo": {
+              "tokens": 107,
+              "palavras": 65,
+              "caracteres": 385,
+              "bytes_utf8": 393,
+              "tokens_por_palavra": 1.646153846153846,
+              "caracteres_por_token": 3.5981308411214954
+            }
+          },
+          "pt_controlado": {
+            "instrucao": {
+              "tokens": 57,
+              "palavras": 34,
+              "caracteres": 220,
+              "bytes_utf8": 224,
+              "tokens_por_palavra": 1.6764705882352942,
+              "caracteres_por_token": 3.8596491228070176
+            },
+            "payload": {
+              "tokens": 49,
+              "palavras": 30,
+              "caracteres": 168,
+              "bytes_utf8": 172,
+              "tokens_por_palavra": 1.6333333333333333,
+              "caracteres_por_token": 3.4285714285714284
+            },
+            "completo": {
+              "tokens": 106,
+              "palavras": 64,
+              "caracteres": 390,
+              "bytes_utf8": 398,
+              "tokens_por_palavra": 1.65625,
+              "caracteres_por_token": 3.6792452830188678
+            }
+          }
+        }
+      ],
+      "contrastes": {
+        "h6_instrucao": {
+          "escopo": "instrucao",
+          "tokens_esquerda": 590,
+          "tokens_direita": 578,
+          "razao_tokens": 1.0207612456747406,
+          "reducao": -0.02076124567474058,
+          "razao_caracteres": 1.0611932687404386,
+          "razao_palavras": 1.0029498525073746,
+          "razao_tokens_sobre_razao_caracteres": 0.9618994727381865
+        },
+        "h6_completo": {
+          "escopo": "completo",
+          "tokens_esquerda": 1190,
+          "tokens_direita": 1190,
+          "razao_tokens": 1.0,
+          "reducao": 0.0,
+          "razao_caracteres": 1.030808729139923,
+          "razao_palavras": 1.0014409221902016,
+          "razao_tokens_sobre_razao_caracteres": 0.9701120797011207
+        }
+      },
+      "decisao_h6": "compatível com H6 neste conjunto"
+    }
+  }
+}

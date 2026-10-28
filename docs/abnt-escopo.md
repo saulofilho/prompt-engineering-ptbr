@@ -15,7 +15,7 @@ Chamar de “português ABNT” um prompt curto, sem cortesia e com lista é usa
 
 Um manual de prompt pode ser claro e ainda assim citar mal. Um texto pode cumprir a NBR 6023 e ser um péssimo prompt. São ofícios diferentes.
 
-O uso prático dessas normas num pedido em português, com o que os estudos sustentam e o que fica de fora, está em `docs/escrita-precisa-ptbr.md`.
+O uso prático dessas normas num pedido em português, com o que os estudos sustentam e o que fica de fora, está em `docs/escrita-precisa-ptbr.md`. O mesmo limite, aplicado a outra especificação, está em `docs/ste-escopo.md`.
 
 ## O que a norma empresta, sem virar regra de token
 
