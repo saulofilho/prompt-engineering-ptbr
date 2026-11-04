@@ -4,7 +4,8 @@ description: >-
   Routes Brazilian Portuguese prompt work to the right skill before drafting.
   Use when writing, reviewing, shortening, or costing a prompt in Portuguese
   (PT-BR), or when the user mentions tokens, ABNT, precisão do pedido,
-  custo de token, otimizar prompt, ASD-STE100, or linguagem controlada.
+  custo de token, otimizar prompt, ASD-STE100, linguagem controlada,
+  psicologia, sociologia, or filosofia.
 ---
 
 # Usar o plugin Prompt PT-BR
@@ -23,6 +24,7 @@ Anuncie: `Using [skill] to [purpose]` e siga essa skill.
 | ASD-STE100, STE, linguagem controlada ou “80%” | `docs/ste-escopo.md` e `HIPOTESES-v1.md`; não trate a sigla como economia de token |
 | Citação, referência, termo ou a sigla ABNT | `scoping-abnt` |
 | Contar tokens, comparar idiomas ou estimar dólar | `measuring-tokens` |
+| Psicologia, sociologia, filosofia ou “mente” de quem escreve o prompt | `docs/mente-de-quem-escreve.md`; literatura sobre a pessoa, não truque sobre o modelo |
 
 ## Ordem
 
@@ -35,6 +37,7 @@ Anuncie: `Using [skill] to [purpose]` e siga essa skill.
 
 - A ABNT não é técnica de reduzir token.
 - O ASD-STE100 também não é. Não peça “escreva em STE” para encurtar, e não declare conformidade com o dicionário.
+- Não use persuasão, personalidade nem programação neurolinguística para conduzir o modelo.
 - Não recomende tirar acento.
 - Não troque termo técnico por sinônimo mais curto.
 - Não copie razão de tokens de Claude, Gemini ou Sabiá a partir de outro tokenizador.

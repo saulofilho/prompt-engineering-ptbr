@@ -87,3 +87,7 @@ Não promover o percentual do piloto a “o português custa X% a mais”. Não 
 ## Versão v1
 
 H6 e H7 estão em `HIPOTESES-v1.md`. O braço `pt_controlado` repete os marcadores do otimizado, com no máximo 20 palavras por segmento, e não pede a sigla ASD-STE100. A contagem está em `benchmarks/results/poc_v1_controlado.md`. H7 registra o estímulo de três formatos de saída e não tem token de resposta enquanto a API não devolver o `usage`.
+
+## Versão v2
+
+H8 está em `HIPOTESES-v2.md`. O desfecho primário é omissão de critério necessário, em escrita livre contra lista fechada, com avaliador cego. Não há participante. Token do prompt produzido, se for contado, não decide H8.

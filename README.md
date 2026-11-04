@@ -23,6 +23,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 - [Manifesto](MANIFESTO.md). Tese do projeto: português preciso é legítimo; a ABNT não é técnica de token; o que o repositório afirma e o que recusa.
 - [Hipóteses](HIPOTESES.md). H1 a H5 pré-registradas, com limiar, escopo e o que uma contagem de tokens não pode decidir.
 - [Hipóteses v1](HIPOTESES-v1.md). H6, forma controlada contra a instrução otimizada, e H7, formato da saída, ainda sem chamada de modelo.
+- [Hipóteses v2](HIPOTESES-v2.md). H8, omissão de critério por quem escreve, com lista fechada contra escrita livre. Desenho registrado, ainda sem participante.
 - [Metodologia](docs/metodologia.md). Braços pareados, métricas, razão das somas, tokenizadores e ameaças à validade do piloto.
 - [Referências](docs/referencias.md). Fontes em formato de referência, com o que cada uma sustenta e o que não sustenta.
 
@@ -34,6 +35,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 - [Checklist](docs/checklist-de-prompt.md). Conferência antes de tratar uma redação como versão otimizada.
 - [Escopo da ABNT](docs/abnt-escopo.md). O que NBR 6023, 6028, 10520 e 14724 fazem neste repositório, e por que a sigla não nomeia um estilo de prompt.
 - [Escopo do ASD-STE100](docs/ste-escopo.md). O que a especificação de inglês técnico empresta ao português, e por que a sigla não é truque de token nem conformidade com o dicionário.
+- [Mente de quem escreve](docs/mente-de-quem-escreve.md). Tese do prompt como externalização de contexto tácito: psicologia, pragmática e sociologia da linguagem viram critério observável, e o teste humano ainda não foi feito.
 
 ### Benchmarks
 
@@ -71,6 +73,7 @@ prompt-engineering-ptbr/
 ├── MANIFESTO.md
 ├── HIPOTESES.md
 ├── HIPOTESES-v1.md
+├── HIPOTESES-v2.md
 ├── AGENTS.md
 ├── .cursor-plugin/plugin.json
 ├── .cursor/skills/
@@ -89,6 +92,7 @@ prompt-engineering-ptbr/
 │   ├── guia-de-escrita-ptbr.md
 │   ├── checklist-de-prompt.md
 │   ├── ste-escopo.md
+│   ├── mente-de-quem-escreve.md
 │   └── referencias.md
 ├── benchmarks/
 │   ├── datasets/

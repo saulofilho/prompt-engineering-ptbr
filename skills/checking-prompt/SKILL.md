@@ -11,6 +11,7 @@ description: >-
 Leia o prompt inteiro. Marque cada item como cumpre ou falha. Não invente nota de qualidade de resposta.
 
 - [ ] A primeira frase diz a tarefa, no imperativo.
+- [ ] O critério que parecia óbvio para quem escreve está escrito no pedido.
 - [ ] A fonte está separada da instrução por um rótulo.
 - [ ] Dá para verificar o cumprimento: quantidade, tamanho, campos ou frase obrigatória.
 - [ ] O idioma da resposta está explícito.

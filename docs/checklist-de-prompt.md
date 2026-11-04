@@ -1,8 +1,9 @@
 # Checklist de prompt
 
-Use antes de tratar um prompt como versão otimizada. A lista não prova qualidade de resposta. As formas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O método longo, para quem precisa ser exato em português, está em `docs/escrita-precisa-ptbr.md`.
+Use antes de tratar um prompt como versão otimizada. A lista não prova qualidade de resposta. As formas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O método longo, para quem precisa ser exato em português, está em `docs/escrita-precisa-ptbr.md`. A literatura sobre quem escreve está em `docs/mente-de-quem-escreve.md`.
 
 - [ ] A primeira frase diz a tarefa, no imperativo.
+- [ ] O critério que parecia óbvio para quem escreve está escrito no pedido.
 - [ ] O texto-fonte está separado da instrução por um rótulo.
 - [ ] Dá para verificar se a resposta cumpriu o pedido: quantidade, tamanho, campos ou frase obrigatória.
 - [ ] O idioma da resposta está explícito.
