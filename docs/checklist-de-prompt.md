@@ -1,6 +1,6 @@
 # Checklist de prompt
 
-Use antes de tratar um prompt como versão otimizada. A lista não prova qualidade de resposta. As formas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O método longo, para quem precisa ser exato em português, está em `docs/escrita-precisa-ptbr.md`. A literatura sobre quem escreve está em `docs/mente-de-quem-escreve.md`.
+Use antes de tratar um prompt como versão otimizada. A lista não prova qualidade de resposta. As formas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O método longo, para quem precisa ser exato em português, está em `docs/escrita-precisa-ptbr.md`. A literatura sobre quem escreve está em `docs/mente-de-quem-escreve.md`. O teste dessa tese, a H8, está em `HIPOTESES-v2.md` e ainda não tem participante.
 
 - [ ] A primeira frase diz a tarefa, no imperativo.
 - [ ] O critério que parecia óbvio para quem escreve está escrito no pedido.

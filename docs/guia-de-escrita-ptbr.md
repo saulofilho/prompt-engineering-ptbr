@@ -62,7 +62,7 @@ Um exemplo do formato de saída, pequeno e fiel, costuma delimitar melhor do que
 
 **Status:** prática. Não isolada no v0.
 
-As formas prontas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O limite da sigla ASD-STE100 está em `docs/ste-escopo.md`. A literatura sobre quem escreve o pedido está em `docs/mente-de-quem-escreve.md`. Quem precisa de precisão extrema, com o lastro de cada dica e o uso correto da ABNT, segue `docs/escrita-precisa-ptbr.md`.
+As formas prontas por tipo de tarefa estão em `docs/padroes-de-prompt.md`. O limite da sigla ASD-STE100 está em `docs/ste-escopo.md`. A literatura sobre quem escreve o pedido está em `docs/mente-de-quem-escreve.md`. A tese, externalização de contexto tácito, e o desenho ainda sem participante estão em `HIPOTESES-v2.md`. Quem precisa de precisão extrema, com o lastro de cada dica e o uso correto da ABNT, segue `docs/escrita-precisa-ptbr.md`.
 
 ## Ordem sugerida
 

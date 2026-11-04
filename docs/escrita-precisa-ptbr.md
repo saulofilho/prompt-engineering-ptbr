@@ -109,5 +109,5 @@ A regra 3 é o caso de ausência. A regra 2 impede paráfrase do valor. O termo 
 - Guia curto: `docs/guia-de-escrita-ptbr.md`
 - Checklist: `docs/checklist-de-prompt.md`
 - Escopo da ABNT: `docs/abnt-escopo.md`
-- Mente de quem escreve: `docs/mente-de-quem-escreve.md`
+- Contexto tácito e H8: `docs/mente-de-quem-escreve.md` e `HIPOTESES-v2.md`
 - Referências: `docs/referencias.md`

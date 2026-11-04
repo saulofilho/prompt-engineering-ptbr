@@ -1,6 +1,6 @@
 # Prompts em português brasileiro
 
-Repositório aberto para estudar como escrever prompts em português e quanto isso custa em tokens, e um plugin de skills para o agente aplicar esse método. O manifesto está em [`MANIFESTO.md`](MANIFESTO.md). As hipóteses, registradas antes da contagem, estão em [`HIPOTESES.md`](HIPOTESES.md). A entrada do plugin está em [`skills/using-prompt-ptbr/SKILL.md`](skills/using-prompt-ptbr/SKILL.md).
+Repositório aberto para estudar como escrever prompts em português e quanto isso custa em tokens, e um plugin de skills para o agente aplicar esse método. O manifesto está em [`MANIFESTO.md`](MANIFESTO.md). As hipóteses de token, registradas antes da contagem, estão em [`HIPOTESES.md`](HIPOTESES.md) e [`HIPOTESES-v1.md`](HIPOTESES-v1.md). A tese sobre quem escreve, ainda sem participante, está em [`HIPOTESES-v2.md`](HIPOTESES-v2.md). A entrada do plugin está em [`skills/using-prompt-ptbr/SKILL.md`](skills/using-prompt-ptbr/SKILL.md).
 
 A tese pública é esta: prompts em português podem ser claros, acessíveis e adequados ao contexto lusófono. O custo de tokenização em relação ao inglês é real e depende do vocabulário. Ele não se resolve com a sigla ABNT, com a retirada de acentos nem com a obrigação de pensar em inglês. Resolve-se, quando se resolve, com instrução menos ambígua e com medição do fluxo inteiro: entrada, saída e retrabalho.
 
@@ -52,7 +52,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 - [Rubrica](evaluation/rubricas/rubrica_v0.md). Nota de 0 a 10 registrada antes das respostas: formato, critério, fidelidade, ausência e idioma. Reprompt fica fora da nota.
 - [Checagem automática](evaluation/automatico/checagem_v0.py). Aplica o que dá para verificar sem pessoa: JSON, tamanho, frase exata e número que não está na fonte.
 - [Protocolo de juiz automático](evaluation/llm-as-judge/PROTOCOLO.md). Regras para um modelo julgar resposta. Ainda não executado; não substitui amostra humana.
-- [Avaliação humana](evaluation/humanos/README.md). Onde as notas cegas entram. Ainda não há notas.
+- [Avaliação humana](evaluation/humanos/README.md). Onde entram as notas cegas. A H8, omissão de critério por quem escreve, espera participante, consentimento e avaliador cego. Ainda não há notas.
 
 ### Dados e execução
 
@@ -102,7 +102,8 @@ prompt-engineering-ptbr/
 │   ├── 01_tokenizacao.py
 │   ├── 02_benchmark_modelos.py
 │   ├── 03_custo.py
-│   └── 04_gerar_e_avaliar.py
+│   ├── 04_gerar_e_avaliar.py
+│   └── 05_controlado.py
 └── evaluation/
     ├── automatico/
     ├── rubricas/

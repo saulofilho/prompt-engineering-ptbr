@@ -24,7 +24,7 @@ Anuncie: `Using [skill] to [purpose]` e siga essa skill.
 | Citação, referência, termo ou a sigla ABNT | `scoping-abnt` |
 | ASD-STE100, STE, linguagem controlada ou “80%” | `docs/ste-escopo.md` e `HIPOTESES-v1.md`; não trate a sigla como economia de token |
 | Contar tokens, comparar idiomas ou estimar dólar | `measuring-tokens` |
-| Psicologia, sociologia, filosofia ou “mente” de quem escreve o prompt | `docs/mente-de-quem-escreve.md`; literatura sobre a pessoa, não truque sobre o modelo |
+| Psicologia, sociologia, filosofia, contexto tácito ou “mente” de quem escreve | `docs/mente-de-quem-escreve.md` e `HIPOTESES-v2.md`; a H8 não foi testada e não confirma contagem de token |
 
 ## Ordem
 

@@ -19,4 +19,5 @@ python3 -m venv .venv
 .venv/bin/python poc/02_benchmark_modelos.py
 .venv/bin/python poc/03_custo.py
 .venv/bin/python poc/04_gerar_e_avaliar.py
+.venv/bin/python poc/05_controlado.py
 ```

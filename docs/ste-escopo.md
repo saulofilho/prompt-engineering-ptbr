@@ -47,7 +47,7 @@ Tom continua como regra (“tom formal, sem saudação”), no mesmo lugar em qu
 
 ## Onde isso está no estudo
 
-- Hipóteses da forma controlada e do formato de saída: `HIPOTESES-v1.md`. O arquivo `HIPOTESES.md` permanece o registro v0.
+- Hipóteses da forma controlada e do formato de saída: `HIPOTESES-v1.md`. O arquivo `HIPOTESES.md` permanece o registro v0. A omissão por quem escreve é outra pergunta, a H8, em `HIPOTESES-v2.md`.
 - Braço `pt_controlado`: `benchmarks/datasets/pares_v1_controlado.json`.
 - Estímulos de formato, ainda sem chamada de modelo: `benchmarks/datasets/formatos_v1.json`.
 - Padrões para copiar: `docs/padroes-de-prompt.md`.
