@@ -18,7 +18,22 @@
 
 ## Dataset
 
-Cada item precisa de `en`, `pt_paralelo`, `pt_coloquial`, `pt_vago` e `pt_otimizado`, mais as fontes nos dois idiomas. Os marcadores de `pt_coloquial` e `pt_otimizado` são os mesmos. `pt_vago` não pode contê-los todos. Rode `poc/01_tokenizacao.py --checar` antes de abrir a discussão dos números.
+Cada item precisa de `en`, `pt_paralelo`, `pt_coloquial`, `pt_vago` e `pt_otimizado`, mais as fontes nos dois idiomas. Os marcadores de `pt_coloquial` e `pt_otimizado` são os mesmos. `pt_vago` não pode contê-los todos. Rode `python3 tools/validar_dataset.py` para a forma e `poc/01_tokenizacao.py --checar` para os marcadores antes de abrir a discussão dos números.
+
+## Antes de abrir o pull request
+
+As mesmas verificações do CI (ver [`.github/workflows/ci.yml`](.github/workflows/ci.yml)):
+
+```bash
+python3 tools/sync_skills.py --check
+python3 tools/validar_dataset.py
+.venv/bin/python poc/01_tokenizacao.py --checar
+.venv/bin/python evaluation/automatico/checagem_v0.py
+.venv/bin/ruff check .
+.venv/bin/pytest
+```
+
+Se você mexeu em uma skill, edite só `skills/` e rode `python3 tools/sync_skills.py` para atualizar `.cursor/skills/`.
 
 Não descreva o próprio nome civil de outra pessoa a partir de um usuário de rede. Exemplos do dataset usam figuras fictícias.
 

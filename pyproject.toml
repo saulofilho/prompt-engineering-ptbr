@@ -1,0 +1,40 @@
+[project]
+name = "prompt-engineering-ptbr"
+version = "0.1.0"
+description = "Como escrever prompts precisos em português brasileiro e quanto isso custa em tokens: piloto reprodutível e plugin de skills."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Saulo Filho", url = "https://github.com/saulofilho" }]
+keywords = ["prompt", "portugues", "pt-br", "tokens", "abnt", "skills"]
+dependencies = [
+    "tiktoken>=0.7.0,<0.9.0",
+    "tokenizers>=0.20.0,<0.22.0",
+    "huggingface_hub>=0.26.0,<0.30.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<10.0",
+    "ruff>=0.6,<0.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/saulofilho/prompt-engineering-ptbr"
+
+# O projeto é um conjunto de scripts e dados, não um pacote importável.
+# Não há build de wheel; use `pip install -r requirements.txt`.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# E/F: pyflakes + pycodestyle; I: import sorting; UP: pyupgrade; B: bugbear.
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]  # linhas longas em texto/tabela são aceitáveis aqui

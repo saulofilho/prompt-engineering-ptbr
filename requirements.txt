@@ -1,3 +1,7 @@
-tiktoken>=0.7.0
-tokenizers>=0.20.0
-huggingface_hub>=0.26.0
+# Dependências do piloto de contagem de tokens.
+# Pisos e tetos: a contagem depende da versão do tokenizador, então uma
+# atualização maior pode mudar os números. Ao gravar um resultado, registre
+# a versão instalada junto ao hash do dataset (ver benchmarks/results/README.md).
+tiktoken>=0.7.0,<0.9.0
+tokenizers>=0.20.0,<0.22.0
+huggingface_hub>=0.26.0,<0.30.0

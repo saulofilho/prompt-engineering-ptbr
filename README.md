@@ -1,5 +1,23 @@
 # Prompts em português brasileiro
 
+[![CI](https://github.com/saulofilho/prompt-engineering-ptbr/actions/workflows/ci.yml/badge.svg)](https://github.com/saulofilho/prompt-engineering-ptbr/actions/workflows/ci.yml)
+[![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-blue.svg)](LICENSE)
+[![Texto: CC BY 4.0](https://img.shields.io/badge/texto-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+## Começar em 1 minuto
+
+Conta tokens de doze tarefas pareadas (PT-BR × inglês) e não inventa número: braço sem resultado fica vazio.
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python poc/01_tokenizacao.py        # conta e grava benchmarks/results/poc_v0_tokenizacao.md
+.venv/bin/python poc/01_tokenizacao.py --checar  # só valida os marcadores, sem gravar
+```
+
+O índice completo está abaixo; a seção [Rodar o piloto](#rodar-o-piloto) traz todos os scripts e a opção `uv`.
+
+---
+
 Repositório aberto para estudar como escrever prompts em português e quanto isso custa em tokens, e um plugin de skills para o agente aplicar esse método. O manifesto está em [`MANIFESTO.md`](MANIFESTO.md). As hipóteses de token, registradas antes da contagem, estão em [`HIPOTESES.md`](HIPOTESES.md) e [`HIPOTESES-v1.md`](HIPOTESES-v1.md). A tese sobre quem escreve, ainda sem participante, está em [`HIPOTESES-v2.md`](HIPOTESES-v2.md). A entrada do plugin está em [`skills/using-prompt-ptbr/SKILL.md`](skills/using-prompt-ptbr/SKILL.md).
 
 A tese pública é esta: prompts em português podem ser claros, acessíveis e adequados ao contexto lusófono. O custo de tokenização em relação ao inglês é real e depende do vocabulário. Ele não se resolve com a sigla ABNT, com a retirada de acentos nem com a obrigação de pensar em inglês. Resolve-se, quando se resolve, com instrução menos ambígua e com medição do fluxo inteiro: entrada, saída e retrabalho.
@@ -8,7 +26,7 @@ A tese pública é esta: prompts em português podem ser claros, acessíveis e a
 
 Skills para o agente escrever e revisar o pedido sem transformar o piloto em regra. O manifesto de instalação está em [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (`prompt-ptbr`, versão 0.1.0). [`AGENTS.md`](AGENTS.md) manda o agente ler a skill de entrada antes de redigir.
 
-No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, porque o Windows não segue o link simbólico do Linux. Quando o plugin estiver no marketplace, o comando é `/add-plugin prompt-ptbr`. Outros harnesses ainda não têm pacote próprio.
+No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, porque o Windows não segue o link simbólico do Linux. A fonte única é `skills/`; a cópia é gerada por `python3 tools/sync_skills.py` e o CI falha (`--check`) se as duas árvores divergirem, então edite só `skills/`. Quando o plugin estiver no marketplace, o comando é `/add-plugin prompt-ptbr`. Outros harnesses ainda não têm pacote próprio.
 
 - [Usar o plugin](skills/using-prompt-ptbr/SKILL.md). Escolhe a skill certa antes de redigir e lista o que o agente não pode afirmar.
 - [Escrever](skills/writing-precise-ptbr/SKILL.md). Reescreve o pedido em português: imperativo, regras conferíveis, termo estável e frase de ausência.
@@ -144,6 +162,22 @@ Só a checagem dos marcadores, sem gravar resultado:
 ```
 
 O script recusa o dataset se a variante coloquial ou a otimizada perder um critério, ou se a variante vaga conservar todos. Não edite o markdown de resultado à mão.
+
+## Desenvolvimento
+
+As verificações que o CI roda a cada pull request, todas executáveis no local:
+
+```bash
+.venv/bin/pip install -r requirements.txt pytest ruff
+python3 tools/sync_skills.py --check            # .cursor/skills em dia com skills/
+python3 tools/validar_dataset.py                # forma dos datasets de pares
+.venv/bin/python poc/01_tokenizacao.py --checar # invariantes dos marcadores
+.venv/bin/python evaluation/automatico/checagem_v0.py  # autochecagem da rubrica
+.venv/bin/ruff check .                          # lint
+.venv/bin/pytest                                # testes
+```
+
+A configuração de `ruff` e `pytest` está em [`pyproject.toml`](pyproject.toml).
 
 ## Contribuir
 

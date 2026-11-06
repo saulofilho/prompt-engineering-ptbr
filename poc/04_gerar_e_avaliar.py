@@ -27,6 +27,10 @@ REPROMPT = (
     "A resposta anterior não cumpriu o formato pedido. "
     "Envie somente a resposta refeita, obedecendo às regras do pedido original."
 )
+# Os IDs de modelo e os preços (benchmarks/datasets/precos_v0.json) são do
+# estado registrado neste repositório, com data. Confirme o ID vigente na API
+# do provedor antes de rodar: nomes e versões mudam, e um ID inexistente faz a
+# linha cair como "não medido", sem inventar razão.
 PROVEDORES = [
     {
         "id": "gpt-4o",

@@ -414,7 +414,7 @@ def markdown(relatorio: dict) -> str:
         "",
         *tabela_itens(primario),
         "",
-        f"## Somas — cl100k_base",
+        "## Somas — cl100k_base",
         "",
         *tabela_somas(secundario),
         "",
