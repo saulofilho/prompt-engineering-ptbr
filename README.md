@@ -8,6 +8,8 @@
 
 **Site:** <https://saulofilho.github.io/prompt-engineering-ptbr/>
 
+**Apresentação (time de engenharia):** [prompt-preciso-eng.pdf](assets/prompt-preciso-eng.pdf) — projeto, desafios, resultados e retorno.
+
 ## Começar em 1 minuto
 
 Conta tokens de doze tarefas pareadas (PT-BR × inglês) e não inventa número: braço sem resultado fica vazio.
