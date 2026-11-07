@@ -1,5 +1,7 @@
 # Prompts em português brasileiro
 
+**Idiomas:** Português · [English (summary)](README.en.md)
+
 [![CI](https://github.com/saulofilho/prompt-engineering-ptbr/actions/workflows/ci.yml/badge.svg)](https://github.com/saulofilho/prompt-engineering-ptbr/actions/workflows/ci.yml)
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-blue.svg)](LICENSE)
 [![Texto: CC BY 4.0](https://img.shields.io/badge/texto-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
