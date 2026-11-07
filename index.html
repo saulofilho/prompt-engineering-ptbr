@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>prompt preciso · pt-br</title>
+<meta name="description" content="Repositório aberto para estudar como escrever prompts em português brasileiro e quanto isso custa em tokens — com um plugin de skills para o agente aplicar o método.">
+<meta property="og:title" content="prompt preciso · engenharia de prompt em português">
+<meta property="og:description" content="Português preciso é legítimo. A ABNT não é técnica de token. O que o repositório afirma e o que recusa.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="./">prompt <b>preciso</b> · pt-br</a>
+    <div class="nav-links">
+      <a href="#comecar">começar</a>
+      <a href="#numeros">números</a>
+      <a href="#plugin">plugin</a>
+      <a href="#docs">documentos</a>
+      <a class="ext" href="https://github.com/saulofilho/prompt-engineering-ptbr" target="_blank" rel="noopener">github</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-kicker">engenharia de prompt em português brasileiro</p>
+    <h1 class="wordmark">preciso</h1>
+    <div class="hero-cols">
+      <p>português claro, acessível e adequado ao contexto lusófono — não é pensar em inglês.</p>
+      <p>o custo em tokens é real e depende do vocabulário. medido, não suposto.</p>
+      <p>a sigla abnt não é técnica de token; é citação, termo e numeração onde a norma regula.</p>
+      <p>skills para o agente escrever e conferir o pedido sem virar o piloto em regra.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="#comecar">começar em 1 minuto</a>
+      <a class="btn ghost" href="leitor.html?p=MANIFESTO.md">ler o manifesto</a>
+      <a class="btn ghost" href="https://github.com/saulofilho/prompt-engineering-ptbr" target="_blank" rel="noopener">ver no github</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== COMEÇAR ===== -->
+<section class="block" id="comecar">
+  <div class="wrap">
+    <p class="eyebrow">começar em 1 minuto</p>
+    <p class="section-lead">conta tokens de doze tarefas pareadas (pt-br × inglês) e não inventa número: braço sem resultado fica vazio.</p>
+<pre class="code"><span class="c"># cria o ambiente e instala as dependências</span>
+python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt
+
+<span class="c"># conta e grava benchmarks/results/poc_v0_tokenizacao.md</span>
+.venv/bin/python <span class="p">poc/01_tokenizacao.py</span>
+
+<span class="c"># só valida os marcadores, sem gravar</span>
+.venv/bin/python poc/01_tokenizacao.py <span class="p">--checar</span></pre>
+    <p class="section-note">a tese pública: prompts em português podem ser claros e exatos. o custo de tokenização em relação ao inglês é real e depende do vocabulário — não se resolve com a sigla abnt, nem retirando acento, nem pensando em inglês. resolve-se com instrução menos ambígua e com medição do fluxo inteiro: entrada, saída e retrabalho.</p>
+  </div>
+</section>
+
+<!-- ===== NÚMEROS ===== -->
+<section class="block" id="numeros">
+  <div class="wrap">
+    <p class="eyebrow">números do piloto</p>
+    <div class="fig-grid">
+      <div class="fig c-green">
+        <div class="big num">5,5<span class="u">%</span></div>
+        <div class="cap"><b>forma controlada (h6)</b> · a instrução controlada ficou maior que a otimizada, com os mesmos marcadores, no o200k_base</div>
+      </div>
+      <div class="fig c-camel">
+        <div class="big num">12</div>
+        <div class="cap"><b>tarefas pareadas</b> · pt-br × inglês, cada uma com os marcadores de critério que os braços precisam conservar</div>
+      </div>
+      <div class="fig c-purple">
+        <div class="big num">8</div>
+        <div class="cap"><b>hipóteses pré-registradas</b> · h1–h8, com limiar e escopo; a h8 ainda espera participante</div>
+      </div>
+    </div>
+    <p class="section-note">o piloto não inventa número: onde não há resposta da api, a linha fica vazia. claude, gemini e sabiá ficam sem razão de token porque o vocabulário não é publicado. não se edita o markdown de resultado à mão.</p>
+  </div>
+</section>
+
+<!-- ===== PLUGIN / SKILLS ===== -->
+<section class="block" id="plugin">
+  <div class="wrap">
+    <p class="eyebrow">plugin · skills</p>
+    <p class="section-lead">skills para o agente escrever e revisar o pedido em português, sem transformar o piloto em regra geral.</p>
+    <div class="skills">
+      <a class="skill-card" href="leitor.html?p=skills/using-prompt-ptbr/SKILL.md">
+        <span class="sk-cmd">using-prompt-ptbr</span>
+        <h4>usar o plugin</h4>
+        <p>escolhe a skill certa antes de redigir e lista o que o agente não pode afirmar.</p>
+      </a>
+      <a class="skill-card" href="leitor.html?p=skills/writing-precise-ptbr/SKILL.md">
+        <span class="sk-cmd">writing-precise-ptbr</span>
+        <h4>escrever</h4>
+        <p>imperativo, regras conferíveis, termo estável e frase de ausência.</p>
+      </a>
+      <a class="skill-card" href="leitor.html?p=skills/checking-prompt/SKILL.md">
+        <span class="sk-cmd">checking-prompt</span>
+        <h4>conferir</h4>
+        <p>marca o checklist e recusa chamar de otimizada a versão que só ficou curta.</p>
+      </a>
+      <a class="skill-card" href="leitor.html?p=skills/scoping-abnt/SKILL.md">
+        <span class="sk-cmd">scoping-abnt</span>
+        <h4>abnt no pedido</h4>
+        <p>citação, termo e numeração onde a norma regula — e recusa a sigla como truque de token.</p>
+      </a>
+      <a class="skill-card" href="leitor.html?p=skills/measuring-tokens/SKILL.md">
+        <span class="sk-cmd">measuring-tokens</span>
+        <h4>medir</h4>
+        <p>conta no tokenizador do modelo alvo; sem chave de api, deixa o modelo sem número.</p>
+      </a>
+      <a class="skill-card" href="leitor.html?p=AGENTS.md">
+        <span class="sk-cmd">AGENTS.md</span>
+        <h4>para o agente</h4>
+        <p>manda ler a skill de entrada antes de redigir ou revisar um prompt.</p>
+      </a>
+    </div>
+    <p class="install-note">no marketplace: <code>/add-plugin prompt-ptbr</code> · manifesto em <code>.cursor-plugin/plugin.json</code> · a fonte única é <code>skills/</code>; a cópia <code>.cursor/skills</code> é gerada por <code>tools/sync_skills.py</code>.</p>
+  </div>
+</section>
+
+<!-- ===== DOCUMENTOS ===== -->
+<section class="block" id="docs">
+  <div class="wrap">
+    <p class="eyebrow">documentos</p>
+    <p class="section-lead">o laboratório inteiro: posição, método, benchmarks e avaliação. cada peça diz o que sustenta e o que não sustenta.</p>
+    <div class="doc-groups">
+
+      <div class="doc-col">
+        <div class="col-h">posição e método</div>
+        <ul class="doc-list">
+          <li><a href="leitor.html?p=MANIFESTO.md"><span><span class="t">manifesto</span><span class="d">tese do projeto; o que afirma e o que recusa</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=HIPOTESES.md"><span><span class="t">hipóteses</span><span class="d">h1 a h5 pré-registradas, com limiar e escopo</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=HIPOTESES-v1.md"><span><span class="t">hipóteses v1</span><span class="d">h6 (forma controlada) e h7 (formato da saída)</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=HIPOTESES-v2.md"><span><span class="t">hipóteses v2</span><span class="d">h8: omissão de critério por quem escreve</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/metodologia.md"><span><span class="t">metodologia</span><span class="d">braços pareados, métricas e ameaças à validade</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/referencias.md"><span><span class="t">referências</span><span class="d">fontes, com o que cada uma sustenta</span></span><span class="arw">→</span></a></li>
+        </ul>
+      </div>
+
+      <div class="doc-col">
+        <div class="col-h">escrever em português</div>
+        <ul class="doc-list">
+          <li><a href="leitor.html?p=docs/escrita-precisa-ptbr.md"><span><span class="t">escrita precisa</span><span class="d">critério conferível, frase de ausência, termo estável</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/padroes-de-prompt.md"><span><span class="t">padrões de prompt</span><span class="d">uma forma por tipo de tarefa do piloto</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/guia-de-escrita-ptbr.md"><span><span class="t">guia curto</span><span class="d">dez práticas, cada uma com o status da evidência</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/checklist-de-prompt.md"><span><span class="t">checklist</span><span class="d">conferência antes de chamar de versão otimizada</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/abnt-escopo.md"><span><span class="t">escopo da abnt</span><span class="d">o que nbr 6023, 6028, 10520 e 14724 fazem aqui</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/ste-escopo.md"><span><span class="t">escopo do asd-ste100</span><span class="d">o que o inglês técnico empresta ao português</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=docs/mente-de-quem-escreve.md"><span><span class="t">mente de quem escreve</span><span class="d">prompt como externalização de contexto tácito</span></span><span class="arw">→</span></a></li>
+        </ul>
+      </div>
+
+      <div class="doc-col">
+        <div class="col-h">benchmarks</div>
+        <ul class="doc-list">
+          <li><a href="leitor.html?p=docs/benchmark-ptbr-en.md"><span><span class="t">protocolo pt-br × inglês</span><span class="d">como a comparação entre idiomas é desenhada</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=benchmarks/results/benchmark_modelos_ptbr_en.md"><span><span class="t">tabela por modelo</span><span class="d">razão de tokens no tokenizador de cada família</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=benchmarks/results/poc_v0_tokenizacao.md"><span><span class="t">piloto das hipóteses</span><span class="d">contagem no o200k_base e no cl100k_base</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=benchmarks/results/poc_v1_controlado.md"><span><span class="t">forma controlada</span><span class="d">h6 no o200k_base; h7 ainda sem número</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=benchmarks/results/custo_usd.md"><span><span class="t">custo em dólar</span><span class="d">entrada dos doze prompts, tabela de 22 out 2026</span></span><span class="arw">→</span></a></li>
+        </ul>
+      </div>
+
+      <div class="doc-col">
+        <div class="col-h">avaliação · dados</div>
+        <ul class="doc-list">
+          <li><a href="leitor.html?p=evaluation/rubricas/rubrica_v0.md"><span><span class="t">rubrica</span><span class="d">nota 0–10 registrada antes das respostas</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=evaluation/llm-as-judge/PROTOCOLO.md"><span><span class="t">juiz automático</span><span class="d">regras para um modelo julgar resposta</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=evaluation/humanos/README.md"><span><span class="t">avaliação humana</span><span class="d">onde entram as notas cegas; ainda sem notas</span></span><span class="arw">→</span></a></li>
+          <li><a href="leitor.html?p=poc/README.md"><span><span class="t">prova de conceito</span><span class="d">o que cada script faz: contagem, dólar, api</span></span><span class="arw">→</span></a></li>
+          <li><a href="https://github.com/saulofilho/prompt-engineering-ptbr/tree/main/benchmarks/datasets" target="_blank" rel="noopener"><span><span class="t">datasets ↗</span><span class="d">pares, léxico, modelos e preços (json, no github)</span></span><span class="arw">→</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== RODAPÉ ===== -->
+<footer class="block">
+  <div class="wrap foot">
+    <div>
+      <p class="mark">prompt preciso</p>
+      <p>português preciso é legítimo; a abnt não é técnica de token. repositório aberto de estudo e um plugin de skills.</p>
+      <p style="margin-top:10px">código, scripts e skills sob mit · texto sob cc by 4.0.</p>
+    </div>
+    <div>
+      <h5>repositório</h5>
+      <a href="https://github.com/saulofilho/prompt-engineering-ptbr" target="_blank" rel="noopener">código no github</a>
+      <a href="leitor.html?p=CONTRIBUTING.md">contribuir</a>
+      <a href="leitor.html?p=CODE_OF_CONDUCT.md">código de conduta</a>
+      <a href="https://github.com/saulofilho/prompt-engineering-ptbr/blob/main/LICENSE" target="_blank" rel="noopener">licença</a>
+    </div>
+    <div>
+      <h5>como citar</h5>
+      <p>enquanto não houver release, cite o commit e a data.</p>
+      <p>para a penalidade de tokenização em geral, cite petrov et al. (2023), não este piloto.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

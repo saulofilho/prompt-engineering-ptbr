@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>leitor · prompt preciso</title>
+<meta name="description" content="Leitor de documentos do repositório prompt-engineering-ptbr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="./">prompt <b>preciso</b> · pt-br</a>
+    <div class="nav-links">
+      <a href="./#comecar">começar</a>
+      <a href="./#plugin">plugin</a>
+      <a href="./#docs">documentos</a>
+      <a class="ext" href="https://github.com/saulofilho/prompt-engineering-ptbr" target="_blank" rel="noopener">github</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="reader">
+    <div class="reader-head">
+      <a href="./#docs">← voltar aos documentos</a>
+      <span class="crumb" id="crumb"></span>
+    </div>
+    <div id="content" class="prose">
+      <p class="loading">carregando documento…</p>
+    </div>
+    <div class="reader-footlinks" id="footlinks" hidden>
+      <a href="./#docs">← todos os documentos</a>
+      <a id="ghlink" href="#" target="_blank" rel="noopener">ver fonte no github ↗</a>
+    </div>
+  </article>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
