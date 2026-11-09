@@ -114,10 +114,30 @@ the twelve-task pilot into a general rule. Source of truth is
 [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (`prompt-ptbr`). The
 skill descriptions are already in English, so an agent routes on English queries.
 
+## References
+
+Core works, with what each one does and does not support — the same discipline
+the project applies to its own numbers. The **full, ABNT-formatted bibliography**
+(normative standards, pragmatics, cognitive load and the blog/repo measurements
+used only as motivation) is in [`docs/referencias.md`](docs/referencias.md).
+
+- **Petrov, A., La Malfa, E., Torr, P. H. S., & Bibi, A. (2023).** Language model tokenizers introduce unfairness between languages. *NeurIPS 36*. <https://arxiv.org/abs/2305.15425> — Supports that the inequality starts at tokenization; reports ≈1.48 for Portuguese on `cl100k_base` over FLORES-200. Does **not** support a single percentage for every later model.
+- **Araújo, L. R. da S. (2025).** Análise de prompt cross-lingual: o impacto da qualidade do prompt e da linguagem no desempenho de LLMs. Undergraduate thesis (TCC), Universidade Federal de Pernambuco. <https://repositorio.ufpe.br/handle/123456789/68389> — Supports, in that study's design, that specificity and structure weigh more than verbosity, and that English led on its evaluation (with low human agreement). Does **not** support that every Portuguese prompt is inferior, nor the reverse.
+- **Huang, H., et al. (2023).** Not all languages are created equal in LLMs: cross-lingual-thought prompting. *Findings of ACL: EMNLP 2023*, 12365–12394. — Supports that cross-lingual prompt design changes performance. Does **not** measure the Brazilian-Portuguese token bill.
+- **Qin, L., et al. (2023).** Cross-lingual prompting: improving zero-shot chain-of-thought reasoning across languages. arXiv. <https://arxiv.org/abs/2310.14799> — Same scope as Huang et al.: prompt design across languages, not token cost.
+- **AEROSPACE AND DEFENCE INDUSTRIES ASSOCIATION OF EUROPE (2025).** ASD-STE100: Simplified Technical English, Issue 9. <https://www.asd-ste100.org/> — Supports controlled-English rules for technical manuals. Does **not** support a token percentage in Portuguese, and is not a dictionary-conformance claim here.
+
+The pragmatics, language-ideology and cognitive-load literature (Grice, Austin,
+Searle, Clark, Bell, Woolard & Schieffelin, Sweller, Cowan, Norman, Camerer et
+al., Newton) grounds the "who writes the prompt" thesis in
+[`docs/mente-de-quem-escreve.md`](docs/mente-de-quem-escreve.md). None of it was
+run on this repository's paired items, and none of it decides a token or quality
+result here.
+
 ## How to cite
 
 Until there is a release, cite the commit and the date. For the tokenization
-penalty in general, cite Petrov et al. (2023), not this pilot. References:
+penalty in general, cite Petrov et al. (2023), not this pilot. Full references:
 [`docs/referencias.md`](docs/referencias.md).
 
 ## License
