@@ -6,6 +6,8 @@
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-blue.svg)](LICENSE)
 [![Texto: CC BY 4.0](https://img.shields.io/badge/texto-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
+> **Estágio:** piloto pré-registrado. As contagens de token são reais; os resultados de geração, qualidade e custo do fluxo ainda não foram medidos — dependem de chave de API. Leia as hipóteses como hipóteses, não como conclusões.
+
 [![prompt preciso — engenharia de prompt em português brasileiro](assets/og.jpg)](https://saulofilho.github.io/prompt-engineering-ptbr/)
 
 **Site:** <https://saulofilho.github.io/prompt-engineering-ptbr/>

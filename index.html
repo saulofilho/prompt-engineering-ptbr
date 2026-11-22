@@ -35,6 +35,7 @@
     <div class="nav-links">
       <a href="#comecar">começar</a>
       <a href="#numeros">números</a>
+      <a href="#antes-depois">antes/depois</a>
       <a href="#plugin">plugin</a>
       <a href="#docs">documentos</a>
       <a class="ext" href="https://github.com/saulofilho/prompt-engineering-ptbr" target="_blank" rel="noopener">github</a>
@@ -46,6 +47,7 @@
 <header class="hero">
   <div class="wrap">
     <p class="hero-kicker">engenharia de prompt em português brasileiro</p>
+    <p class="stage-badge">piloto pré-registrado · ainda sem resultados de qualidade medidos</p>
     <h1 class="wordmark">preciso</h1>
     <div class="hero-cols">
       <p>português claro, acessível e adequado ao contexto lusófono — não é pensar em inglês.</p>
@@ -97,6 +99,72 @@ python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt
       </div>
     </div>
     <p class="section-note">o piloto não inventa número: onde não há resposta da api, a linha fica vazia. claude, gemini e sabiá ficam sem razão de token porque o vocabulário não é publicado. não se edita o markdown de resultado à mão.</p>
+  </div>
+</section>
+
+<!-- ===== ANTES / DEPOIS ===== -->
+<section class="block" id="antes-depois">
+  <div class="wrap">
+    <p class="eyebrow">antes / depois</p>
+    <p class="section-lead">o mesmo pedido, três jeitos. encurtar é bom quando corta rodeio — e ruim quando apaga critério.</p>
+
+    <div class="ba-task">
+      <div class="ba-head">
+        <span class="t">resumo-chamados</span>
+        <span class="s">resumir um relatório de suporte em 5 tópicos</span>
+      </div>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-label"><span class="k">antes ·</span> <span class="v">coloquial</span></div>
+          <pre>Oi, tudo bem? Será que você poderia, por favor, me ajudar com uma coisa? Eu queria que você resumisse esse texto em 5 tópicos. Cada tópico precisa ser uma frase de no máximo 20 palavras. Escreve a resposta em português brasileiro, tá bom?</pre>
+          <div class="ba-chips"><span class="ba-chip ok">5 tópicos</span><span class="ba-chip ok">20 palavras</span><span class="ba-chip ok">pt-br</span></div>
+        </div>
+        <div class="ba-card good">
+          <div class="ba-label"><span class="k">depois ·</span> <span class="v">otimizado</span></div>
+          <pre>Resuma o texto em 5 tópicos.
+Regras:
+- uma frase por tópico
+- no máximo 20 palavras
+- resposta em português brasileiro</pre>
+          <div class="ba-chips"><span class="ba-chip ok">5 tópicos</span><span class="ba-chip ok">20 palavras</span><span class="ba-chip ok">pt-br</span></div>
+        </div>
+        <div class="ba-card trap">
+          <div class="ba-label"><span class="k">armadilha ·</span> <span class="v">vago</span></div>
+          <pre>Resume esse texto aí pra mim.</pre>
+          <div class="ba-chips"><span class="ba-chip no">5 tópicos</span><span class="ba-chip no">20 palavras</span><span class="ba-chip no">pt-br</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-task">
+      <div class="ba-head">
+        <span class="t">codigo-validar-cpf</span>
+        <span class="s">escrever uma função python que valida cpf</span>
+      </div>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-label"><span class="k">antes ·</span> <span class="v">coloquial</span></div>
+          <pre>Você poderia escrever a função Python cpf_valido(numero: str) -> bool que confere os dígitos verificadores do CPF, por favor? Rejeite formato inválido, inclua dois testes com assert e devolva somente o código. Valeu!</pre>
+          <div class="ba-chips"><span class="ba-chip ok">cpf_valido</span><span class="ba-chip ok">rejeita inválido</span><span class="ba-chip ok">2 asserts</span><span class="ba-chip ok">só código</span></div>
+        </div>
+        <div class="ba-card good">
+          <div class="ba-label"><span class="k">depois ·</span> <span class="v">otimizado</span></div>
+          <pre>Escreva a função Python cpf_valido(numero: str) -> bool que confere os dígitos verificadores do CPF.
+Regras:
+- rejeite formato inválido
+- inclua dois testes com assert
+- devolva somente o código</pre>
+          <div class="ba-chips"><span class="ba-chip ok">cpf_valido</span><span class="ba-chip ok">rejeita inválido</span><span class="ba-chip ok">2 asserts</span><span class="ba-chip ok">só código</span></div>
+        </div>
+        <div class="ba-card trap">
+          <div class="ba-label"><span class="k">armadilha ·</span> <span class="v">vago</span></div>
+          <pre>Valida CPF pra mim.</pre>
+          <div class="ba-chips"><span class="ba-chip no">cpf_valido</span><span class="ba-chip no">rejeita inválido</span><span class="ba-chip no">2 asserts</span><span class="ba-chip no">só código</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ba-note">o <b>otimizado</b> é mais curto que o coloquial e guarda todos os critérios — isso é otimizar. o <b>vago</b> também é curto, mas apaga os critérios: parece econômico e não serve. exemplos reais de <a href="leitor.html?p=benchmarks/datasets/pares_v0.json" style="color:var(--green-ink)">pares_v0.json</a>.</p>
   </div>
 </section>
 
