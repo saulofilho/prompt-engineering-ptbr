@@ -1,0 +1,73 @@
+{
+  "id": "gemini",
+  "model": "gemini-3.8-flash",
+  "origem": "countTokens",
+  "aviso": "Contagem do provedor, sem declaração de exatidão. Não mede saída nem qualidade.",
+  "contado_em": "2026-11-22",
+  "dataset_sha256": "e8e0c771c7f49b117eb345e24e18f35f2a3418184e2f50cc46deadebb5606636",
+  "tokens_en": 972,
+  "tokens_pt": 1098,
+  "razao_pt_en": 1.1296296296296295,
+  "itens": [
+    {
+      "id": "resumo-chamados",
+      "en": 85,
+      "pt_paralelo": 107
+    },
+    {
+      "id": "resumo-ata",
+      "en": 76,
+      "pt_paralelo": 93
+    },
+    {
+      "id": "extrair-chamado",
+      "en": 78,
+      "pt_paralelo": 87
+    },
+    {
+      "id": "extrair-cobranca",
+      "en": 91,
+      "pt_paralelo": 100
+    },
+    {
+      "id": "classificar-avaliacoes",
+      "en": 68,
+      "pt_paralelo": 76
+    },
+    {
+      "id": "classificar-incidentes",
+      "en": 99,
+      "pt_paralelo": 109
+    },
+    {
+      "id": "codigo-media-movel",
+      "en": 65,
+      "pt_paralelo": 72
+    },
+    {
+      "id": "codigo-validar-cpf",
+      "en": 65,
+      "pt_paralelo": 72
+    },
+    {
+      "id": "escolher-fornecedor",
+      "en": 104,
+      "pt_paralelo": 119
+    },
+    {
+      "id": "verificar-prazo",
+      "en": 76,
+      "pt_paralelo": 86
+    },
+    {
+      "id": "qa-abertura",
+      "en": 78,
+      "pt_paralelo": 83
+    },
+    {
+      "id": "qa-tarifa",
+      "en": 87,
+      "pt_paralelo": 94
+    }
+  ]
+}

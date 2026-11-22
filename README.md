@@ -73,7 +73,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 - [Forma controlada](benchmarks/results/poc_v1_controlado.md). H6 no `o200k_base`: a instrução controlada ficou 5,5% maior que a otimizada, com os mesmos marcadores. H7 continua sem número.
 - [Custo em dólar](benchmarks/results/custo_usd.md). Entrada dos doze prompts convertida pela tabela de 22 out. 2026. Só há dólar onde existem tokens medidos e preço verificado.
 - [Geração e qualidade](benchmarks/results/geracao_qualidade.md). Chamada ao modelo, nota automática, alucinação verificável, reprompt e dólar do fluxo. Nesta execução as linhas estão vazias: não havia chave de API.
-- [Razão medida na API](benchmarks/results/benchmark_api_ptbr_en.md). PT/EN só com o `usage` ou o `count_tokens` que o provedor devolve. Sem chamada, a linha não é preenchida com outro tokenizador.
+- [Razão medida na API](benchmarks/results/benchmark_api_ptbr_en.md). PT/EN só com o `usage` ou o `count_tokens` que o provedor devolve. Sem chamada, a linha não é preenchida com outro tokenizador. Gemini 3.8 Flash: 1,130 neste conjunto, em 22 nov. 2026. Claude e Sabiá seguem sem número.
 
 ### Avaliação
 
@@ -132,7 +132,8 @@ prompt-engineering-ptbr/
 │   ├── 03_custo.py
 │   ├── 04_gerar_e_avaliar.py
 │   ├── 05_controlado.py
-│   └── 06_contar_tokens_claude.py
+│   ├── 06_contar_tokens_claude.py
+│   └── 07_contar_tokens_gemini.py
 └── evaluation/
     ├── automatico/
     ├── rubricas/
@@ -173,6 +174,14 @@ Para medir só a razão PT/EN do Claude, sem gerar resposta (exige conta com sal
 ```
 
 `06` usa o `count_tokens` da Anthropic, que não cobra por contagem, mas recusa conta sem saldo (verificado em 22 nov. 2026). O script pede a chave num prompt oculto. Não exporte a chave se não quiser gastar: com `ANTHROPIC_API_KEY` no ambiente, o `04` faz chamadas pagas.
+
+Para medir só a razão PT/EN do Gemini, sem gerar resposta:
+
+```bash
+.venv/bin/python poc/07_contar_tokens_gemini.py
+```
+
+`07` usa o `countTokens` do Gemini e pede sempre a chave num prompt oculto. Use um projeto do AI Studio sem faturamento e só com texto público: no nível gratuito, o Google usa o que é enviado e revisores humanos podem ler.
 
 Só a checagem dos marcadores, sem gravar resultado:
 

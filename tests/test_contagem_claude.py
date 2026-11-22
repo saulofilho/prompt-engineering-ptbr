@@ -22,7 +22,7 @@ def cenario(tmp_path, monkeypatch):
             {"id": p["id"], "rotulo": p["rotulo"], "status": "nao-medido"} for p in gerar.PROVEDORES
         ]
     }
-    for nome in ("OUT_JSON", "OUT_API", "OUT_CONTAGEM"):
+    for nome in ("OUT_JSON", "OUT_API"):
         monkeypatch.setattr(gerar, nome, tmp_path / getattr(gerar, nome).name)
     gerar.OUT_JSON.write_text(json.dumps(relatorio), encoding="utf-8")
     monkeypatch.setattr(
@@ -61,7 +61,7 @@ def test_chave_nao_vai_para_arquivo_nem_saida(cenario, capsys):
     assert contador.main() == 0
     saida = capsys.readouterr()
     assert CHAVE not in saida.out + saida.err
-    assert CHAVE not in gerar.OUT_CONTAGEM.read_text(encoding="utf-8")
+    assert CHAVE not in gerar.caminho_contagem("claude").read_text(encoding="utf-8")
     assert CHAVE not in gerar.OUT_API.read_text(encoding="utf-8")
 
 
@@ -71,7 +71,7 @@ def test_resposta_invalida_nao_grava(cenario, monkeypatch, resposta):
     monkeypatch.setattr(gerar, "post", lambda *args: resposta)
     assert contador.main() == 1
     assert not gerar.OUT_API.exists()
-    assert not gerar.OUT_CONTAGEM.exists()
+    assert not gerar.caminho_contagem("claude").exists()
 
 
 def test_falha_no_meio_nao_grava_parcial(cenario, monkeypatch):
@@ -86,7 +86,7 @@ def test_falha_no_meio_nao_grava_parcial(cenario, monkeypatch):
     monkeypatch.setattr(gerar, "post", post)
     assert contador.main() == 1
     assert not gerar.OUT_API.exists()
-    assert not gerar.OUT_CONTAGEM.exists()
+    assert not gerar.caminho_contagem("claude").exists()
 
 
 def test_chave_invalida_nao_e_repetida_no_erro(cenario, monkeypatch, capsys):
@@ -108,7 +108,7 @@ def test_usage_tem_precedencia(cenario):
         "razao_pt_en": 1.1,
         "razao_origem": "usage",
     }
-    tabela = gerar.markdown_api(relatorio, gerar.ler_contagem())
+    tabela = gerar.markdown_api(relatorio, gerar.ler_contagens())
     assert "| 200 | 220 | 1,100 | usage |" in tabela
     assert "count_tokens" not in tabela
 
@@ -117,14 +117,14 @@ def test_usage_tem_precedencia(cenario):
 def test_contagem_de_outro_modelo_ou_dataset_e_ignorada(cenario, campo):
     gerar, _, _ = cenario
     assert contador.main() == 0
-    salvo = json.loads(gerar.OUT_CONTAGEM.read_text(encoding="utf-8"))
+    salvo = json.loads(gerar.caminho_contagem("claude").read_text(encoding="utf-8"))
     salvo[campo] = "outro"
-    gerar.OUT_CONTAGEM.write_text(json.dumps(salvo), encoding="utf-8")
-    assert gerar.ler_contagem() is None
+    gerar.caminho_contagem("claude").write_text(json.dumps(salvo), encoding="utf-8")
+    assert gerar.ler_contagens() == {}
 
 
 def test_sem_contagem_a_tabela_fica_como_antes(cenario):
     gerar, relatorio, _ = cenario
-    tabela = gerar.markdown_api(relatorio, gerar.ler_contagem())
+    tabela = gerar.markdown_api(relatorio, gerar.ler_contagens())
     assert tabela.count("sem usage da API") == 4
     assert "count_tokens" not in tabela

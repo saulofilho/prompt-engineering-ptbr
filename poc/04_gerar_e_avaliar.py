@@ -3,6 +3,9 @@
 
 Claude, Gemini e Sabiá só entram na razão PT/EN se a API devolver a
 contagem de entrada. Não há fallback para tiktoken.
+
+A chave nunca vai na URL, e texto de exceção nunca vai para arquivo de
+resultado, que é versionado: só o código HTTP ou o tipo do erro.
 """
 
 from __future__ import annotations
@@ -22,7 +25,6 @@ PRECOS = ROOT / "benchmarks" / "datasets" / "precos_v0.json"
 OUT_JSON = ROOT / "benchmarks" / "results" / "geracao_qualidade.json"
 OUT_MD = ROOT / "benchmarks" / "results" / "geracao_qualidade.md"
 OUT_API = ROOT / "benchmarks" / "results" / "benchmark_api_ptbr_en.md"
-OUT_CONTAGEM = ROOT / "benchmarks" / "results" / "contagem_claude.json"
 
 BRACOS = ("en", "pt_paralelo", "pt_coloquial", "pt_otimizado", "pt_vago")
 REPROMPT = (
@@ -83,10 +85,46 @@ def carregar(caminho: Path, nome: str):
 
 def chave(nomes: list[str]) -> str | None:
     for nome in nomes:
-        valor = os.environ.get(nome)
+        valor = os.environ.get(nome, "").strip()
         if valor:
             return valor
     return None
+
+
+class ErroChave(RuntimeError):
+    """A mensagem é fixa e nunca contém o valor da chave."""
+
+
+class ErroAPI(RuntimeError):
+    def __init__(self, codigo: int, detalhe: str):
+        super().__init__(f"HTTP {codigo}: {detalhe}")
+        self.codigo = codigo
+
+
+class SemRedirecionamento(urllib.request.HTTPRedirectHandler):
+    """Sem isto, o urllib repassaria o cabeçalho com a chave ao destino."""
+
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+
+def validar_segredo(segredo: str) -> None:
+    # O http.client repete o valor de URL ou cabeçalho inválido na exceção.
+    if not all("!" <= caractere <= "~" for caractere in segredo):
+        raise ErroChave("chave com espaço ou caractere inválido; não foi enviada")
+
+
+def ocultar(texto: str, segredo: str | None) -> str:
+    return texto.replace(segredo, "<oculto>") if segredo else texto
+
+
+def erro_publicavel(exc: Exception) -> str:
+    """O que pode ir para arquivo versionado. Nunca o corpo nem o texto da exceção."""
+    if isinstance(exc, ErroChave):
+        return str(exc)
+    if isinstance(exc, ErroAPI):
+        return f"HTTP {exc.codigo} na chamada à API"
+    return f"falha na chamada ({type(exc).__name__})"
 
 
 def post(url: str, payload: dict, headers: dict) -> dict:
@@ -97,11 +135,16 @@ def post(url: str, payload: dict, headers: dict) -> dict:
         method="POST",
     )
     try:
-        with urllib.request.urlopen(pedido, timeout=90) as resposta:
+        abridor = urllib.request.build_opener(SemRedirecionamento)
+        with abridor.open(pedido, timeout=90) as resposta:
             return json.loads(resposta.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
-        corpo = exc.read().decode("utf-8", errors="replace")[:500]
-        raise RuntimeError(f"HTTP {exc.code}: {corpo}") from exc
+        corpo = exc.read().decode("utf-8", errors="replace")
+        for nome, valor in headers.items():
+            if nome.lower() in ("authorization", "x-api-key", "x-goog-api-key"):
+                corpo = ocultar(corpo, valor.removeprefix("Bearer "))
+        # Ocultar antes de cortar: o corte no meio da chave impediria a troca.
+        raise ErroAPI(exc.code, corpo[:500]) from exc
 
 
 def chamar(provedor: dict, messages: list[dict], segredo: str) -> tuple[str, int | None, int | None]:
@@ -140,12 +183,12 @@ def chamar(provedor: dict, messages: list[dict], segredo: str) -> tuple[str, int
             conteudos.append({"role": papel, "parts": [{"text": mensagem["content"]}]})
         url = (
             "https://generativelanguage.googleapis.com/v1beta/models/"
-            f"{provedor['model']}:generateContent?key={segredo}"
+            f"{provedor['model']}:generateContent"
         )
         dados = post(
             url,
             {"contents": conteudos, "generationConfig": {"temperature": 0}},
-            {"Content-Type": "application/json"},
+            {"x-goog-api-key": segredo, "Content-Type": "application/json"},
         )
         texto = dados["candidates"][0]["content"]["parts"][0]["text"]
         uso = dados.get("usageMetadata") or {}
@@ -326,19 +369,34 @@ def markdown(relatorio: dict) -> str:
     return "\n".join(linhas) + "\n"
 
 
-def ler_contagem() -> dict | None:
-    """Contagem de poc/06, se ainda vale para este dataset e este modelo."""
-    if not OUT_CONTAGEM.exists():
-        return None
-    contagem = json.loads(OUT_CONTAGEM.read_text(encoding="utf-8"))
-    modelo = next(p["model"] for p in PROVEDORES if p["id"] == "claude")
-    dataset = hashlib.sha256(DATASET.read_bytes()).hexdigest()
-    if contagem["model"] != modelo or contagem["dataset_sha256"] != dataset:
-        return None
-    return contagem
+NOTAS_CONTAGEM = {
+    "claude": "No Claude (`poc/06_contar_tokens_claude.py`), a contagem não é cobrada, mas exige conta com saldo. A Anthropic a descreve como estimativa, que pode incluir tokens de sistema não cobrados. O total inclui o envelope de cada mensagem, igual nos dois idiomas, que aproxima a razão de 1. O número vale só para este modelo, porque o Claude 4.7 e os seguintes usam outro tokenizador.",
+    "gemini": "No Gemini (`poc/07_contar_tokens_gemini.py`), o `countTokens` não gera resposta. A documentação não diz se o número é exato nem se inclui envelope de mensagem. O número vale só para este modelo e não se transfere para a Gemma nem para outro Gemini.",
+}
 
 
-def markdown_api(relatorio: dict, contagem: dict | None = None) -> str:
+def caminho_contagem(id_provedor: str) -> Path:
+    return OUT_API.parent / f"contagem_{id_provedor}.json"
+
+
+def ler_contagens() -> dict[str, dict]:
+    """Contagens de poc/06 e poc/07 que ainda valem para este dataset e modelo."""
+    lf = DATASET.read_bytes().replace(b"\r\n", b"\n")
+    # LF ou CRLF não muda o JSON lido, então não invalida a contagem.
+    hashes = {hashlib.sha256(b).hexdigest() for b in (lf, lf.replace(b"\n", b"\r\n"))}
+    validas = {}
+    for provedor in PROVEDORES:
+        caminho = caminho_contagem(provedor["id"])
+        if not caminho.exists():
+            continue
+        contagem = json.loads(caminho.read_text(encoding="utf-8"))
+        if contagem["model"] == provedor["model"] and contagem["dataset_sha256"] in hashes:
+            validas[provedor["id"]] = contagem
+    return validas
+
+
+def markdown_api(relatorio: dict, contagens: dict[str, dict] | None = None) -> str:
+    contagens = contagens or {}
     linhas = [
         "# PT-BR / EN medido na API do provedor",
         "",
@@ -347,15 +405,16 @@ def markdown_api(relatorio: dict, contagem: dict | None = None) -> str:
         "| Modelo | Tokens EN | Tokens PT-BR | PT/EN | Origem |",
         "| --- | ---: | ---: | ---: | --- |",
     ]
-    usou_contagem = False
+    contados = []
     for modelo in relatorio["modelos"]:
         if modelo["status"] != "medido" or modelo["resumo"]["razao_pt_en"] is None:
-            if contagem and contagem["id"] == modelo["id"]:
-                usou_contagem = True
+            contagem = contagens.get(modelo["id"])
+            if contagem:
+                contados.append(modelo["id"])
                 razao = f"{contagem['razao_pt_en']:.3f}".replace(".", ",")
                 linhas.append(
                     f"| {modelo['rotulo']} | {contagem['tokens_en']} | {contagem['tokens_pt']} | {razao} | "
-                    f"count_tokens em {contagem['contado_em']}, estimativa, sem geração |"
+                    f"{contagem['origem']} em {contagem['contado_em']}, sem geração |"
                 )
                 continue
             linhas.append(f"| {modelo['rotulo']} | — | — | não medido | sem usage da API |")
@@ -366,13 +425,12 @@ def markdown_api(relatorio: dict, contagem: dict | None = None) -> str:
             f"{resumo['razao_pt_en']:.3f}".replace(".", ",")
             + f" | {resumo['razao_origem']} |"
         )
-    if usou_contagem:
-        linhas[2] = linhas[2].replace("devolveu `usage`", "devolveu `usage` ou `count_tokens`")
+    if contados:
+        linhas[2] = linhas[2].replace("devolveu `usage`", "devolveu `usage` ou contagem de tokens")
+        for id_provedor in contados:
+            linhas.extend(["", NOTAS_CONTAGEM[id_provedor]])
         linhas.extend(
-            [
-                "",
-                "`count_tokens` (`poc/06_contar_tokens_claude.py`) não cobra por contagem, exige conta com saldo e não gera resposta. A Anthropic o descreve como estimativa, que pode incluir tokens de sistema não cobrados. O total inclui o envelope de cada mensagem, igual nos dois idiomas, que aproxima a razão de 1: não a compare diretamente com a dos tokenizadores locais, que contam sem envelope. O número vale só para este modelo, porque o Claude 4.7 e os seguintes usam outro tokenizador.",
-            ]
+            ["", "Contagem de API não é diretamente comparável à dos tokenizadores locais, que contam o texto sem envelope."]
         )
     linhas.append("")
     return "\n".join(linhas) + "\n"
@@ -404,6 +462,7 @@ def main() -> int:
             continue
         print(f"gerando {provedor['id']}...", flush=True)
         try:
+            validar_segredo(segredo)
             bloco = executar(
                 provedor,
                 segredo,
@@ -419,10 +478,10 @@ def main() -> int:
                     "id": provedor["id"],
                     "rotulo": provedor["rotulo"],
                     "status": "nao-medido",
-                    "erro": str(exc),
+                    "erro": erro_publicavel(exc),
                 }
             )
-            print(f"  falhou: {exc}", flush=True)
+            print(f"  falhou: {ocultar(str(exc), segredo)}", flush=True)
             continue
         modelos.append(
             {
@@ -441,7 +500,7 @@ def main() -> int:
     }
     OUT_JSON.write_text(json.dumps(relatorio, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     OUT_MD.write_text(markdown(relatorio), encoding="utf-8")
-    OUT_API.write_text(markdown_api(relatorio, ler_contagem()), encoding="utf-8")
+    OUT_API.write_text(markdown_api(relatorio, ler_contagens()), encoding="utf-8")
     print(f"escreveu {OUT_MD}")
     return 0
 

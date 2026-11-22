@@ -97,7 +97,9 @@ the row as "not measured" rather than inventing a ratio. Claude, Gemini and Sabi
 have no tokenizer ratio because they do not publish a tokenizer; they only appear
 once an API returns `usage` or `count_tokens`. For Claude, `poc/06_contar_tokens_claude.py`
 gets that count as a provider estimate, without generating an answer. Counting is not billed,
-but the API rejects accounts with no credit balance.
+but the API rejects accounts with no credit balance. For Gemini, `poc/07_contar_tokens_gemini.py`
+uses `countTokens`, also without generating an answer: on this set, Gemini 3.8 Flash
+gave a ratio of **1.130** (2026-11-22). Claude and Sabiá remain unmeasured.
 
 ## Where to read (Portuguese)
 
