@@ -1,0 +1,12 @@
+# Estes arquivos têm SHA-256 registrado em benchmarks/results/.
+# Trocar a quebra de linha muda o hash, então ela fica fixa em qualquer sistema.
+/HIPOTESES.md text eol=lf
+/HIPOTESES-v1.md text eol=lf
+/benchmarks/datasets/lexico_v0.json text eol=lf
+/benchmarks/datasets/modelos_v0.json text eol=lf
+/benchmarks/datasets/pares_v1_controlado.json text eol=lf
+/benchmarks/datasets/formatos_v1.json text eol=lf
+
+# Não normalizar: poc_v1_controlado.json e contagem_gemini.json registram os
+# bytes em CRLF. O registro da v0 é da versão em LF, que está no commit dff181f.
+/benchmarks/datasets/pares_v0.json -text
