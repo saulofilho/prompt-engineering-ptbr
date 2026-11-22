@@ -76,7 +76,7 @@ python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt
 
 <span class="c"># só valida os marcadores, sem gravar</span>
 .venv/bin/python poc/01_tokenizacao.py <span class="p">--checar</span></pre>
-    <p class="section-note">a tese pública: prompts em português podem ser claros e exatos. o custo de tokenização em relação ao inglês é real e depende do vocabulário — não se resolve com a sigla abnt, nem retirando acento, nem pensando em inglês. resolve-se com instrução menos ambígua e com medição do fluxo inteiro: entrada, saída e retrabalho.</p>
+    <p class="section-note">a tese pública: prompts em português podem ser claros e exatos. o custo de tokenização em relação ao inglês é real e depende do vocabulário — não se resolve com a sigla abnt, nem retirando acento, nem pensando em inglês. resolve-se, quando se resolve, com instrução menos ambígua e com medição do fluxo inteiro: entrada, saída e retrabalho.</p>
   </div>
 </section>
 
@@ -95,7 +95,7 @@ python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt
       </div>
       <div class="fig c-purple">
         <div class="big num">8</div>
-        <div class="cap"><b>hipóteses pré-registradas</b> · h1–h8, com limiar e escopo; a h8 ainda espera participante</div>
+        <div class="cap"><b>hipóteses pré-registradas</b> · h1–h8, com escopo e regra; só h1, h3, h5 e h6 já têm contagem</div>
       </div>
     </div>
     <p class="section-note">o piloto não inventa número: onde não há resposta da api, a linha fica vazia. claude, gemini e sabiá ficam sem razão de token porque o vocabulário não é publicado. não se edita o markdown de resultado à mão.</p>
@@ -116,7 +116,7 @@ python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt
       <div class="ba-grid">
         <div class="ba-card">
           <div class="ba-label"><span class="k">antes ·</span> <span class="v">coloquial</span></div>
-          <pre>Oi, tudo bem? Será que você poderia, por favor, me ajudar com uma coisa? Eu queria que você resumisse esse texto em 5 tópicos. Cada tópico precisa ser uma frase de no máximo 20 palavras. Escreve a resposta em português brasileiro, tá bom?</pre>
+          <pre>Oi, tudo bem? Será que você poderia, por favor, me ajudar com uma coisa? Eu queria que você resumisse esse texto em 5 tópicos. Cada tópico precisa ser uma frase de no máximo 20 palavras. Escreve a resposta em português brasileiro, tá bom? Desde já agradeço!</pre>
           <div class="ba-chips"><span class="ba-chip ok">5 tópicos</span><span class="ba-chip ok">20 palavras</span><span class="ba-chip ok">pt-br</span></div>
         </div>
         <div class="ba-card good">
@@ -164,7 +164,7 @@ Regras:
       </div>
     </div>
 
-    <p class="ba-note">o <b>otimizado</b> é mais curto que o coloquial e guarda todos os critérios — isso é otimizar. o <b>vago</b> também é curto, mas apaga os critérios: parece econômico e não serve. exemplos reais de <a href="leitor.html?p=benchmarks/datasets/pares_v0.json" style="color:var(--green-ink)">pares_v0.json</a>.</p>
+    <p class="ba-note">o <b>otimizado</b> é mais curto que o coloquial e guarda os marcadores de critério — é o que o projeto chama de otimizar. o <b>vago</b> também é curto, mas apaga os critérios: não é economia útil. se isso piora a resposta, ainda não medimos. exemplos escritos para o estudo, copiados de <a href="https://github.com/saulofilho/prompt-engineering-ptbr/blob/main/benchmarks/datasets/pares_v0.json" target="_blank" rel="noopener" style="color:var(--green-ink)">pares_v0.json</a>.</p>
   </div>
 </section>
 
@@ -205,7 +205,7 @@ Regras:
         <p>manda ler a skill de entrada antes de redigir ou revisar um prompt.</p>
       </a>
     </div>
-    <p class="install-note">no marketplace: <code>/add-plugin prompt-ptbr</code> · manifesto em <code>.cursor-plugin/plugin.json</code> · a fonte única é <code>skills/</code>; a cópia <code>.cursor/skills</code> é gerada por <code>tools/sync_skills.py</code>.</p>
+    <p class="install-note">hoje, no cursor: abra este repositório. quando estiver no marketplace: <code>/add-plugin prompt-ptbr</code> · manifesto em <code>.cursor-plugin/plugin.json</code> · a fonte única é <code>skills/</code>; a cópia <code>.cursor/skills</code> é gerada por <code>tools/sync_skills.py</code>.</p>
   </div>
 </section>
 

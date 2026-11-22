@@ -8,6 +8,7 @@ contagem de entrada. Não há fallback para tiktoken.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import os
@@ -21,6 +22,7 @@ PRECOS = ROOT / "benchmarks" / "datasets" / "precos_v0.json"
 OUT_JSON = ROOT / "benchmarks" / "results" / "geracao_qualidade.json"
 OUT_MD = ROOT / "benchmarks" / "results" / "geracao_qualidade.md"
 OUT_API = ROOT / "benchmarks" / "results" / "benchmark_api_ptbr_en.md"
+OUT_CONTAGEM = ROOT / "benchmarks" / "results" / "contagem_claude.json"
 
 BRACOS = ("en", "pt_paralelo", "pt_coloquial", "pt_otimizado", "pt_vago")
 REPROMPT = (
@@ -324,7 +326,19 @@ def markdown(relatorio: dict) -> str:
     return "\n".join(linhas) + "\n"
 
 
-def markdown_api(relatorio: dict) -> str:
+def ler_contagem() -> dict | None:
+    """Contagem de poc/06, se ainda vale para este dataset e este modelo."""
+    if not OUT_CONTAGEM.exists():
+        return None
+    contagem = json.loads(OUT_CONTAGEM.read_text(encoding="utf-8"))
+    modelo = next(p["model"] for p in PROVEDORES if p["id"] == "claude")
+    dataset = hashlib.sha256(DATASET.read_bytes()).hexdigest()
+    if contagem["model"] != modelo or contagem["dataset_sha256"] != dataset:
+        return None
+    return contagem
+
+
+def markdown_api(relatorio: dict, contagem: dict | None = None) -> str:
     linhas = [
         "# PT-BR / EN medido na API do provedor",
         "",
@@ -333,8 +347,17 @@ def markdown_api(relatorio: dict) -> str:
         "| Modelo | Tokens EN | Tokens PT-BR | PT/EN | Origem |",
         "| --- | ---: | ---: | ---: | --- |",
     ]
+    usou_contagem = False
     for modelo in relatorio["modelos"]:
         if modelo["status"] != "medido" or modelo["resumo"]["razao_pt_en"] is None:
+            if contagem and contagem["id"] == modelo["id"]:
+                usou_contagem = True
+                razao = f"{contagem['razao_pt_en']:.3f}".replace(".", ",")
+                linhas.append(
+                    f"| {modelo['rotulo']} | {contagem['tokens_en']} | {contagem['tokens_pt']} | {razao} | "
+                    f"count_tokens em {contagem['contado_em']}, estimativa, sem geração |"
+                )
+                continue
             linhas.append(f"| {modelo['rotulo']} | — | — | não medido | sem usage da API |")
             continue
         resumo = modelo["resumo"]
@@ -342,6 +365,14 @@ def markdown_api(relatorio: dict) -> str:
             f"| {modelo['rotulo']} | {resumo['tokens_en']} | {resumo['tokens_pt']} | "
             f"{resumo['razao_pt_en']:.3f}".replace(".", ",")
             + f" | {resumo['razao_origem']} |"
+        )
+    if usou_contagem:
+        linhas[2] = linhas[2].replace("devolveu `usage`", "devolveu `usage` ou `count_tokens`")
+        linhas.extend(
+            [
+                "",
+                "`count_tokens` (`poc/06_contar_tokens_claude.py`) não cobra por contagem, exige conta com saldo e não gera resposta. A Anthropic o descreve como estimativa, que pode incluir tokens de sistema não cobrados. O total inclui o envelope de cada mensagem, igual nos dois idiomas, que aproxima a razão de 1: não a compare diretamente com a dos tokenizadores locais, que contam sem envelope. O número vale só para este modelo, porque o Claude 4.7 e os seguintes usam outro tokenizador.",
+            ]
         )
     linhas.append("")
     return "\n".join(linhas) + "\n"
@@ -410,7 +441,7 @@ def main() -> int:
     }
     OUT_JSON.write_text(json.dumps(relatorio, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     OUT_MD.write_text(markdown(relatorio), encoding="utf-8")
-    OUT_API.write_text(markdown_api(relatorio), encoding="utf-8")
+    OUT_API.write_text(markdown_api(relatorio, ler_contagem()), encoding="utf-8")
     print(f"escreveu {OUT_MD}")
     return 0
 

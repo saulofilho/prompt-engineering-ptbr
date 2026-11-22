@@ -225,7 +225,7 @@ img{max-width:100%}
 /* ---------- selo de estágio ---------- */
 .stage-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;
   font-weight:700;text-transform:lowercase;letter-spacing:.03em;color:var(--camel);
-  border:1px solid var(--rule-strong);border-radius:999px;padding:7px 16px;margin:18px 0 0}
+  border:1px solid var(--rule-strong);border-radius:999px;padding:7px 16px;margin:18px 0}
 .stage-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--olive);flex:none}
 
 /* ---------- antes / depois ---------- */
@@ -260,6 +260,11 @@ img{max-width:100%}
 .ba-note{font-family:var(--mono);font-size:13px;color:var(--ink-dim);text-transform:lowercase;
   margin:20px 0 0;line-height:1.55}
 .ba-note b{color:var(--ink);font-weight:700}
+
+/* âncoras abaixo do menu fixo; wordmark inteiro em tela estreita */
+section[id]{scroll-margin-top:56px}
+@media(max-width:620px){section[id]{scroll-margin-top:112px}}
+@media(max-width:370px){.wordmark{font-size:22vw}}
 
 /* respeita redução de movimento */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}

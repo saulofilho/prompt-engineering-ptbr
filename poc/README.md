@@ -10,6 +10,8 @@
 
 `05_controlado.py` confere a forma controlada e conta a H6. A H7 fica sem número.
 
+`06_contar_tokens_claude.py` conta a razão PT/EN do Claude pelo `count_tokens`, que não cobra por contagem nem gera resposta, mas exige conta com saldo de créditos. Pede a chave num prompt oculto, por isso fica fora do bloco abaixo. Com a chave exportada, o `04` daquele bloco passa a cobrar.
+
 Não há notebook nesta versão. O script roda igual em CI e não depende de célula executada à mão. Um notebook, se entrar depois, deve chamar este arquivo em vez de copiar a contagem.
 
 ```bash

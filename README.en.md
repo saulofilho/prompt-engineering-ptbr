@@ -95,7 +95,9 @@ The quality/cost run ([`geracao_qualidade.md`](benchmarks/results/geracao_qualid
 is empty in the published execution: there was no API key, and the script writes
 the row as "not measured" rather than inventing a ratio. Claude, Gemini and Sabiá
 have no tokenizer ratio because they do not publish a tokenizer; they only appear
-once an API returns `usage`.
+once an API returns `usage` or `count_tokens`. For Claude, `poc/06_contar_tokens_claude.py`
+gets that count as a provider estimate, without generating an answer. Counting is not billed,
+but the API rejects accounts with no credit balance.
 
 ## Where to read (Portuguese)
 

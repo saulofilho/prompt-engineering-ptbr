@@ -8,6 +8,8 @@ Os arquivos `poc_v0_tokenizacao.md` e `poc_v0_tokenizacao.json` são gerados por
 
 `geracao_qualidade.md` e `benchmark_api_ptbr_en.md` são gerados por `poc/04_gerar_e_avaliar.py`.
 
+`contagem_claude.json` é gerado por `poc/06_contar_tokens_claude.py`, que também regrava `benchmark_api_ptbr_en.md`. O `04` preserva essa linha enquanto o modelo e o hash do dataset forem os mesmos e não houver `usage`.
+
 `poc_v1_controlado.md` e `poc_v1_controlado.json` são gerados por `poc/05_controlado.py`.
 
 Rode o script para criar ou atualizar. Não edite os números à mão.

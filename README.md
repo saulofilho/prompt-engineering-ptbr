@@ -12,7 +12,7 @@
 
 **Site:** <https://saulofilho.github.io/prompt-engineering-ptbr/>
 
-**Apresentação (time de engenharia):** [prompt-preciso-eng.pdf](assets/prompt-preciso-eng.pdf) — projeto, desafios, resultados e retorno.
+**Apresentação (time de engenharia):** [prompt-preciso-eng.pdf](assets/prompt-preciso-eng.pdf) — projeto, desafios, contagens de token e retorno esperado (ainda não medido).
 
 ## Começar em 1 minuto
 
@@ -73,7 +73,7 @@ No Cursor, abra este repositório: a pasta `.cursor/skills` repete `skills/`, po
 - [Forma controlada](benchmarks/results/poc_v1_controlado.md). H6 no `o200k_base`: a instrução controlada ficou 5,5% maior que a otimizada, com os mesmos marcadores. H7 continua sem número.
 - [Custo em dólar](benchmarks/results/custo_usd.md). Entrada dos doze prompts convertida pela tabela de 22 out. 2026. Só há dólar onde existem tokens medidos e preço verificado.
 - [Geração e qualidade](benchmarks/results/geracao_qualidade.md). Chamada ao modelo, nota automática, alucinação verificável, reprompt e dólar do fluxo. Nesta execução as linhas estão vazias: não havia chave de API.
-- [Razão medida na API](benchmarks/results/benchmark_api_ptbr_en.md). PT/EN só com o `usage` que o provedor devolve. Sem chamada, a linha não é preenchida com outro tokenizador.
+- [Razão medida na API](benchmarks/results/benchmark_api_ptbr_en.md). PT/EN só com o `usage` ou o `count_tokens` que o provedor devolve. Sem chamada, a linha não é preenchida com outro tokenizador.
 
 ### Avaliação
 
@@ -131,7 +131,8 @@ prompt-engineering-ptbr/
 │   ├── 02_benchmark_modelos.py
 │   ├── 03_custo.py
 │   ├── 04_gerar_e_avaliar.py
-│   └── 05_controlado.py
+│   ├── 05_controlado.py
+│   └── 06_contar_tokens_claude.py
 └── evaluation/
     ├── automatico/
     ├── rubricas/
@@ -164,6 +165,14 @@ uv pip install -r requirements.txt --python .venv/bin/python
 ```
 
 `02` baixa só o `tokenizer.json` dos modelos abertos. Não baixa peso. `03` aplica a tabela de preços aos tokens já contados. `04` chama o modelo se existir chave no ambiente (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY` ou `GOOGLE_API_KEY`, `MARITACA_API_KEY` ou `SABIA_API_KEY`). Sem chave, ele grava a linha como não medida e não inventa a razão.
+
+Para medir só a razão PT/EN do Claude, sem gerar resposta (exige conta com saldo de créditos):
+
+```bash
+.venv/bin/python poc/06_contar_tokens_claude.py
+```
+
+`06` usa o `count_tokens` da Anthropic, que não cobra por contagem, mas recusa conta sem saldo (verificado em 22 nov. 2026). O script pede a chave num prompt oculto. Não exporte a chave se não quiser gastar: com `ANTHROPIC_API_KEY` no ambiente, o `04` faz chamadas pagas.
 
 Só a checagem dos marcadores, sem gravar resultado:
 
